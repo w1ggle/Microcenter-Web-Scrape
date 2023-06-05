@@ -5,8 +5,7 @@ URL = input("Please enter the Microcenter URL: \n")
 print("One moment please...")
 
 print("Installing packages")
-#setup.install("beautifulsoup4") # beautiful soup 4 to work with html
-#setup.install("requests") # beautiful soup 4 to generate with http responses
+#setup.install()
 print("Done installing packages")
 
 print("Scraping URL")
@@ -16,26 +15,21 @@ import csv
 
 file = open('output.csv', 'w')
 writer = csv.writer(file)
-writer.writerow(['Item', 'Price', 'CPU', 'Ram', 'Storage'])
+writer.writerow(['Product', 'Price', 'CPU', 'Ram', 'Storage'])
 
+page_to_scrape = requests.get(URL) 
+soup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
 
-page_to_scrape = requests.get(URL) #REQUEST WEBPAGE AND STORE IT AS A VARIABLE
-soup = BeautifulSoup(page_to_scrape.text, 'html.parser') #USE BEAUTIFULSOUP TO PARSE THE HTML AND STORE IT AS A VARIABLE
+products = soup.findAll('span', attrs={'class':'text'}) 
+prices = soup.findAll('small', attrs={"class":"author"})
+cpus = soup.findAll('small', attrs={"class":"author"})
+rams = soup.findAll('small', attrs={"class":"author"})
+storages = soup.findAll('small', attrs={"class":"author"})
 
-quotes = soup.findAll('span', attrs={'class':'text'}) #FIND ALL THE ITEMS IN THE PAGE WITH A CLASS ATTRIBUTE OF 'TEXT'
-#AND STORE THE LIST AS A VARIABLE
-
-#FIND ALL THE ITEMS IN THE PAGE WITH A CLASS ATTRIBUTE OF 'AUTHOR'
-#AND STORE THE LIST AS A VARIABLE
-authors = soup.findAll('small', attrs={"class":"author"})
-
-#LOOP THROUGH BOTH LISTS USING THE 'ZIP' FUNCTION
-#AND PRINT AND FORMAT THE RESULTS
 for quote, author in zip(quotes, authors):
-    
-    writer.writerow([quote.text, author.text]) #WRITE EACH ITEM AS A NEW ROW IN THE CSV
+    writer.writerow([quote.text, author.text]) 
 
-file.close() #CLOSE THE CSV FILE
+file.close() 
 
 
 print("DONE! Check output.csv")
