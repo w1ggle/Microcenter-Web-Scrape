@@ -4,5 +4,5 @@ import subprocess
 def install(package):
     subprocess.run(["python", "-m", "pip", "install", package])
 
-def run(file):
-    subprocess.run(["python", "scraper.py"])
+def run(file): # deprecated
+    subprocess.run(["python", file])
