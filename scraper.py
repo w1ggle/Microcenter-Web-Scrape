@@ -1,11 +1,16 @@
 from bs4 import BeautifulSoup
+from input import URL 
 import requests
 import csv
-from setup import URL 
+
+print("HELLLOOOOOOOOOOOOOOOO")
+
+
 
 file = open('output.csv', 'w')
 writer = csv.writer(file)
-writer.writerow(['Item', 'Price', 'CPU', 'Ram', 'Storage'])
+#writer.writerow(['Item', 'Price', 'CPU', 'Ram', 'Storage'])
+writer.writerow(['quote', 'author'])
 
 #REQUEST WEBPAGE AND STORE IT AS A VARIABLE
 page_to_scrape = requests.get(URL)
