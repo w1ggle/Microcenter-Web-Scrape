@@ -33,9 +33,23 @@ for product in products:
     print(product.find("li", attrs={"class":"spec_1 primary"}).text) #cpu
     print(product.find("li", attrs={"class":"spec_2 primary"}).text) #ram
     print(product.find("li", attrs={"class":"spec_3 primary"}).text) #storage
+    
+    priceOpenBox = product.find("div", attrs={"class":"clearance"})
+
+
+    print(priceOpenBox.text)
+    print (type(priceOpenBox.text))
+    print (type(priceOpenBox))
+    print (priceOpenBox.text.find("$"))
+    #if (priceOpenBox.text.find("$") == " "):
+     #   print("is empty")
+   # else:
+     #   print(priceOpenBox.text)
+        
+
     print("--------------------------")
-with open('output2.txt', 'a') as f:
-    f.write(str(products)) 
+#with open('output2.txt', 'a') as f:
+    #f.write(str(products)) 
 #prices = soup.findAll('small', attrs={"class":"author"})
 #cpus = soup.findAll('small', attrs={"class":"author"})
 #rams = soup.findAll('small', attrs={"class":"author"})
