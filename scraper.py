@@ -35,16 +35,13 @@ for product in products:
     print(product.find("li", attrs={"class":"spec_3 primary"}).text) #storage
     
     priceOpenBox = product.find("div", attrs={"class":"clearance"})
-
-
-    print(priceOpenBox.text)
-    print (type(priceOpenBox.text))
-    print (type(priceOpenBox))
-    print (priceOpenBox.text.find("$"))
-    #if (priceOpenBox.text.find("$") == " "):
-     #   print("is empty")
-   # else:
-     #   print(priceOpenBox.text)
+    priceOpenBoxIndex = priceOpenBox.text.find("$")
+    
+    if (priceOpenBoxIndex == -1):
+        print(product.find("span", attrs={"itemprop":"price"}).text)
+    else:
+       print("open box")
+       print(priceOpenBox.text[priceOpenBoxIndex:])
         
 
     print("--------------------------")
