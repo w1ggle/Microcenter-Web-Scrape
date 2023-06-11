@@ -2,9 +2,6 @@
 import subprocess
 
 def install():
-    if:
-        #asd
-    exception:
         subprocess.run(["python", "-m", "pip", "install", "beautifulsoup4"])  # beautiful soup 4 to work with html
         subprocess.run(["python", "-m", "pip", "install", "requests"]) #  beautiful soup 4 to work with http
 
