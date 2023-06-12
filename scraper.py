@@ -34,14 +34,14 @@ for product in products:
     print(product.find("li", attrs={"class":"spec_2 primary"}).text) #ram
     print(product.find("li", attrs={"class":"spec_3 primary"}).text) #storage
     
-    priceOpenBox = product.find("div", attrs={"class":"clearance"})
-    priceOpenBoxIndex = priceOpenBox.text.find("$")
+    priceOpenBox = product.find("div", attrs={"class":"clearance"}) #going to open box 
+    priceOpenBoxIndex = priceOpenBox.text.find("$") #checking if open box exists
     
     if (priceOpenBoxIndex == -1):
-        print(product.find("span", attrs={"itemprop":"price"}).text)
+        print(product.find("span", attrs={"itemprop":"price"}).text) #normal price
     else:
        print("open box")
-       print(priceOpenBox.text[priceOpenBoxIndex:])
+       print(priceOpenBox.text[priceOpenBoxIndex:]) #open box
         
 
     print("--------------------------")
