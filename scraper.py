@@ -2,8 +2,7 @@
 import setup
 
 #URL = input("Please enter the Microcenter URL: \n")
-URL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288&NTK=all&sortby=pricelow&storeid=075" 
-print("One moment please...")
+URL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
 
 print("Installing packages")
 #setup.install()
@@ -12,50 +11,44 @@ print("Done installing packages")
 print("Scraping URL")
 from bs4 import BeautifulSoup
 import requests
-import csv
 
-#file = open('output.csv', 'w')
-#writer = csv.writer(file)
-#writer.writerow(['Product', 'Price', 'CPU', 'Ram', 'Storage'])
 headers= {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0", 
-    "method": "GET",
-    "mode": "cors"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/97.0", 
+    "method": "GET"
 }
 #"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0", 
 #"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/114.0",
 page_to_scrape = requests.get(URL,headers=headers) 
 soup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
+print(page_to_scrape)
+import csv
+
+file = open('output.csv', 'w')
+writer = csv.writer(file)
+writer.writerow(['Brand', 'Product', 'CPU', 'Ram', 'Storage', 'Price'])
+
+
 products = soup.findAll('li', attrs={"class":"product_wrapper"})
 
 for product in products:
-    print((product.findAll("a")[1].get("data-brand")) + " " + (product.findAll("a")[1].get("data-name").replace('&quot','"'))) #brand and model
-    print(product.find("li", attrs={"class":"spec_1 primary"}).text) #cpu
-    print(product.find("li", attrs={"class":"spec_2 primary"}).text) #ram
-    print(product.find("li", attrs={"class":"spec_3 primary"}).text) #storage
+    brand = product.findAll("a")[1].get("data-brand") 
+    model = product.findAll("a")[1].get("data-name").replace('&quot','"') #brand and model
+    cpu = product.find("li", attrs={"class":"spec_1 primary"}).text #cpu
+    ram = product.find("li", attrs={"class":"spec_2 primary"}).text #ram
+    storage = product.find("li", attrs={"class":"spec_3 primary"}).text #storage
     
     priceOpenBox = product.find("div", attrs={"class":"clearance"}) #going to open box 
     priceOpenBoxIndex = priceOpenBox.text.find("$") #checking if open box exists
     
     if (priceOpenBoxIndex == -1):
-        print(product.find("span", attrs={"itemprop":"price"}).text) #normal price
+        price = (product.find("span", attrs={"itemprop":"price"}).text) #normal price
     else:
-       print("open box")
-       print(priceOpenBox.text[priceOpenBoxIndex:]) #open box
-        
+        price = (priceOpenBox.text[priceOpenBoxIndex:]) #open box
 
-    print("--------------------------")
-#with open('output2.txt', 'a') as f:
-    #f.write(str(products)) 
-#prices = soup.findAll('small', attrs={"class":"author"})
-#cpus = soup.findAll('small', attrs={"class":"author"})
-#rams = soup.findAll('small', attrs={"class":"author"})
-#storages = soup.findAll('small', attrs={"class":"author"})
-
-#for quote, author in zip(quotes, authors):
-#    writer.writerow([quote.text, author.text]) 
-
-#file.close() 
+    writer.writerow([brand, model,cpu,ram,storage,price]) 
+    #print([brand, model,cpu,ram,storage,price])
+file.close() 
+    
 
 
 print("DONE! Check output.csv")
