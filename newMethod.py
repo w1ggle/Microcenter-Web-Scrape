@@ -26,16 +26,19 @@ writer = csv.writer(file)
 writer.writerow(['Brand', 'Model', 'CPU', 'Ram', 'Storage', 'Price'])
 
 
-products = soup.findAll('li', attrs={"class":"product_wrapper"}) #TODO check if faster using div class="results_right"
+products = soup.findAll('div', attrs={"class":"result_right"}) #TODO check if faster using div class="results_right"
+
 
 for product in products:
-    brand = product.findAll("a")[1].get("data-brand") #brand and model
-    model = product.findAll("a")[1].get("data-name").replace('&quot','"') 
+    brand = product.find("a").get("data-brand") #brand and model
+    model = product.find("a").get("data-name").replace('&quot','"') 
 
-    colorIndex = model.rfind('-')
-    color = model[colorIndex+2:]
-    index = model.rfind('"')
-    model = model[:index+1]
+    #print(brand)
+    #print(model)
+    #colorIndex = model.rfind('-')
+    #color = model[colorIndex+2:]
+    #index = model.rfind('"')
+    #model = model[:index+1]
 
         
     fullDetails = product.find("div", attrs={"class":"h2"}).text.split("; ") #getting specs
@@ -63,7 +66,7 @@ for product in products:
         price = (priceOpenBox.text[priceOpenBoxIndex:]) #open box
         openBoxStatus = "x"
 
-    writer.writerow([brand, model, cpu, ram, storage,gpu, price,openBoxStatus,color]) 
+    writer.writerow([brand, model, cpu, ram, storage,gpu, price,openBoxStatus]) 
 
 
 
