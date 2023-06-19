@@ -1,56 +1,56 @@
 Brand,Model,CPU,Ram,Storage,Price
 Acer,Spin 3 SP313-51N-50R3 13.3, Intel Core i5 11th Gen 1135G7 2.4GHz Processor, 8GB LPDDR4X Onboard RAM, 512GB Solid State Drive,"$284.96
-",Silver
+",x,Silver
 HP,Pavilion x360 14-ek0033dx 14.0, Intel Core i5 12th Gen 1235U 1.3GHz Processor, 8GB DDR4-3200 Onboard RAM, 512GB Solid State Drive,"$339.96
-",Silver
-HP,ENVY x360 15-ey0013dx 15.6, AMD Ryzen 5 5625U 2.3GHz Processor, 8GB DDR4-3200 RAM, 256GB Solid State Drive,$399.99,Black
-HP,ENVY x360 Convertible 15-es1008ca 15.6, Intel Core i5 11th Gen 1155G7 2.5GHz Processor, 8GB DDR4-3200 RAM, 1TB Solid State Drive,$499.99,Silver
+",x,Silver
+HP,ENVY x360 15-ey0013dx 15.6, AMD Ryzen 5 5625U 2.3GHz Processor, 8GB DDR4-3200 RAM, 256GB Solid State Drive,$399.99,,Black
+HP,ENVY x360 Convertible 15-es1008ca 15.6, Intel Core i5 11th Gen 1155G7 2.5GHz Processor, 8GB DDR4-3200 RAM, 1TB Solid State Drive,$499.99,,Silver
 Lenovo,IdeaPad Flex 5 14, AMD Ryzen 3 PRO 7330U 2.3GHz Processor, 8GB LPDDR4x-4266 Onboard RAM, 256GB Solid State Drive,"$374.96
-",Blue
+",x,Blue
 Lenovo,IdeaPad Flex 5 14ALC05 14, AMD Ryzen 7 5700U 1.8GHz Processor, 16GB DDR4-3200 Onboard RAM, 512GB Solid State Drive,"$467.96
-",Grey
+",x,Grey
 Lenovo,Flex 5 14, AMD Ryzen 7 5700U 1.8GHz Processor, 16GB LPDDR4x-4266 Onboard RAM, 512GB Solid State Drive,"$467.96
-",Gray
-HP,ENVY x360 Convertible 15-eu1073cl 15.6, AMD Ryzen 7 5825U 2.0GHz Processor, 16GB DDR4-3200 RAM, 512GB Solid State Drive,$549.99,Black
-HP,ENVY x360 15-ew0023dx 15.6, Intel Core i7 12th Gen 1255U 1.7GHz Processor, 16GB DDR4-3200 RAM, 512GB Solid State Drive,$579.99,Silver
-HP,Pavilion x360 Convertible 15-er0097nr 15.6, Intel Core i7 11th Gen 1165G7 2.8GHz Processor, 16GB DDR4-3200 RAM, 512GB Solid State Drive,$579.99,Silver
-Lenovo,IdeaPad Flex 5 14, AMD Ryzen 5 7530U 2.0GHz Processor, 8GB LPDDR4x-4266 Onboard RAM, 512GB Solid State Drive,$579.99,Blue
-HP,ENVY x360 Convertible 15-eu0013ca 15.6, AMD Ryzen 7 5700U 1.8GHz Processor, 16GB DDR4-3200 RAM, 1TB Solid State Drive,$599.99,Black
-Lenovo,IdeaPad Flex 5 16, AMD Ryzen 5 7530U 2.0GHz Processor, 8GB LPDDR4x-4266 Onboard RAM, 512GB Solid State Drive,$599.99,Arctic Grey
+",x,Gray
+HP,ENVY x360 Convertible 15-eu1073cl 15.6, AMD Ryzen 7 5825U 2.0GHz Processor, 16GB DDR4-3200 RAM, 512GB Solid State Drive,$549.99,,Black
+HP,ENVY x360 15-ew0023dx 15.6, Intel Core i7 12th Gen 1255U 1.7GHz Processor, 16GB DDR4-3200 RAM, 512GB Solid State Drive,$579.99,,Silver
+HP,Pavilion x360 Convertible 15-er0097nr 15.6, Intel Core i7 11th Gen 1165G7 2.8GHz Processor, 16GB DDR4-3200 RAM, 512GB Solid State Drive,$579.99,,Silver
+Lenovo,IdeaPad Flex 5 14, AMD Ryzen 5 7530U 2.0GHz Processor, 8GB LPDDR4x-4266 Onboard RAM, 512GB Solid State Drive,$579.99,,Blue
+HP,ENVY x360 Convertible 15-eu0013ca 15.6, AMD Ryzen 7 5700U 1.8GHz Processor, 16GB DDR4-3200 RAM, 1TB Solid State Drive,$599.99,,Black
+Lenovo,IdeaPad Flex 5 16, AMD Ryzen 5 7530U 2.0GHz Processor, 8GB LPDDR4x-4266 Onboard RAM, 512GB Solid State Drive,$599.99,,Arctic Grey
 Lenovo,ThinkPad L13 Yoga Gen 2 -in-1 Laptop Computer - Blac, Intl Core i5 11th Gen 1145G7 2.6GHz Processor, 16GB DDR4-3200 Onboard RAM, 512GB Solid State Drive,"$519.96
-",Black
-HP,ENVY x360 Convertible 15-es2036nr 15.6, Intel Core i7 12th Gen 1260P 2.1GHz Processor, 16GB DDR4-3200 RAM, 1TB Solid State Drive,$649.99,Silver
+",x,Black
+HP,ENVY x360 Convertible 15-es2036nr 15.6, Intel Core i7 12th Gen 1260P 2.1GHz Processor, 16GB DDR4-3200 RAM, 1TB Solid State Drive,$649.99,,Silver
 Lenovo,IdeaPad Flex 5 14, AMD Ryzen 5 5500U 2.1GHz Processor, 8GB LPDDR4x-4266 Onboard RAM, 512GB Solid State Drive,"$373.96
-",Grey
+",x,Grey
 Lenovo,IdeaPad Flex 5i 14.0, Intel Core i5 12th Gen 1235U 1.3GHz Processor, 8GB LPDDR4x-4266 Onboard RAM, 512GB Solid State Drive,"$493.96
-",Grey
-HP,Pavilion x360 Convertible 15-er1152nr 15.6, Intel Core i5 12th Gen 1235U 1.3GHz Processor, 8GB DDR4-3200 RAM, 512GB Solid State Drive,$699.99,Silver
-HP,ENVY x360 Convertible 15-es2003ca 15.6, Intel Core i7 12th Gen 1260P 2.1GHz Processor, 16GB DDR4-3200 RAM, 1TB Solid State Drive,$699.99,Silver
-Dell,Latitude 7430 14, Intel Core i5 12th Gen 1245U 1.6GHz Processor, 16GB Onboard RAM, 256GB Solid State Drive,$699.99,Gray
+",x,Grey
+HP,Pavilion x360 Convertible 15-er1152nr 15.6, Intel Core i5 12th Gen 1235U 1.3GHz Processor, 8GB DDR4-3200 RAM, 512GB Solid State Drive,$699.99,,Silver
+HP,ENVY x360 Convertible 15-es2003ca 15.6, Intel Core i7 12th Gen 1260P 2.1GHz Processor, 16GB DDR4-3200 RAM, 1TB Solid State Drive,$699.99,,Silver
+Dell,Latitude 7430 14, Intel Core i5 12th Gen 1245U 1.6GHz Processor, 16GB Onboard RAM, 256GB Solid State Drive,$699.99,,Gray
 Lenovo,IdeaPad Flex 5 16.0, AMD Ryzen 7 5700U 1.8GHz Processor, 8GB LPDDR4x-4266 Onboard RAM, 1TB Solid State Drive,"$532.96
-",Grey
+",x,Grey
 HP,Pavilion x360 14-ek0033dx 14, Intel Core i5 12th Gen 1235U 1.3GHz Processor, 8GB DDR4-3200 Onboard RAM, 512GB Solid State Drive,"$373.96
-",Silver
-Lenovo,IdeaPad Flex 5i 16, Intel Core i7 13th Gen 1355U 1.2GHz Processor, 16GB LPDDR4x-4266 Onboard RAM, 1TB Solid State Drive,$899.99,Arctic Grey
+",x,Silver
+Lenovo,IdeaPad Flex 5i 16, Intel Core i7 13th Gen 1355U 1.2GHz Processor, 16GB LPDDR4x-4266 Onboard RAM, 1TB Solid State Drive,$899.99,,Arctic Grey
 HP,Pavilion x360 Convertible 14-dy2035nr 14.0, Intel Core i7 12th Gen 1255U 1.7GHz Processor, 16GB LPDDR4x-3200 Onboard RAM, 1TB Solid State Drive,"$809.96
-",Silver
-Microsoft,Surface Pro 9 13, Intel Core i5 12th Gen 1235U 1.3GHz Processor, 8GB LPDDR5 RAM, 256GB Solid State Drive,$999.99,Platinum
-Microsoft,Surface Pro 9 13, Intel Core i5 12th Gen 1235U 1.3GHz Processor, 8GB LPDDR5 RAM, 256GB Solid State Drive,$999.99,Graphite
-HP,ENVY x 360 15-ew1068nr 15.6, Intel Core i7 13th Gen 1355U 1.2GHz Processor, 16GB DDR4-3200 RAM, 1TB Solid State Drive,$999.99,Mineral Silver
+",x,Silver
+Microsoft,Surface Pro 9 13, Intel Core i5 12th Gen 1235U 1.3GHz Processor, 8GB LPDDR5 RAM, 256GB Solid State Drive,$999.99,,Platinum
+Microsoft,Surface Pro 9 13, Intel Core i5 12th Gen 1235U 1.3GHz Processor, 8GB LPDDR5 RAM, 256GB Solid State Drive,$999.99,,Graphite
+HP,ENVY x 360 15-ew1068nr 15.6, Intel Core i7 13th Gen 1355U 1.2GHz Processor, 16GB DDR4-3200 RAM, 1TB Solid State Drive,$999.99,,Mineral Silver
 Dell,XPS 13 9315 13.4, Intel Core i5 12th Gen 1230U 0.7GHz Processor, 16GB Onboard RAM, 512GB Solid State Drive,"$1,019.96
-",Blue
-HP,Spectre x360 16-f1023dx 16, Intel i7 12th Gen 1260P 2.1GHz Processor, Intel Arc A370M 4GB GDDR6, 16GB DDR4-3200 Onboard RAM,"$1,199.99",Nightfall Black
+",x,Blue
+HP,Spectre x360 16-f1023dx 16, Intel i7 12th Gen 1260P 2.1GHz Processor, Intel Arc A370M 4GB GDDR6, 16GB DDR4-3200 Onboard RAM,"$1,199.99",,Nightfall Black
 HP,ENVY x360 Convertible 15-es2168nr 15.6, Intel Core i7 12th Gen 1260P 2.1GHz Processor, 16GB DDR4-3200 RAM, 512GB Solid State Drive,"$1,187.96
-",Silver
-Microsoft,Surface Pro 9 13, Intel Core i7 12th Gen 1255U 1.7GHz Processor, 16GB LPDDR5 RAM, 256GB Solid State Drive,"$1,399.99",Platinum
-Microsoft,Surface Laptop Studio 14.4, Intel Core 11th Gen H35 i5-11300H 2.60GHz Processor, 16GB LPDDR4x RAM, 256GB Solid State Drive,"$1,399.99",Platinum
-Microsoft,Surface Pro 9 13, Intel Core i7 12th Gen 1255U 1.7GHz Processor, 16GB LPDDR5 RAM, 512GB Solid State Drive,"$1,599.99",Platinum
-Microsoft,Surface Pro 9 13, Intel Core i7 12th Gen 1255U 1.7GHz Processor, 16GB LPDDR5 RAM, 512GB Solid State Drive,"$1,599.99",Graphite
-Microsoft,Surface Laptop Studio 14.4, Intel Core 11th Gen H35 i5-11300H 2.60GHz Processor, 16GB LPDDR4x RAM, 512GB Solid State Drive,"$1,599.99",Platinum
-Dell,XPS 13 9315 13, Intel Core i7 12th Gen 1250U 0.8GHz Processor, 16GB On-board RAM, 1TB Solid State Drive,"$1,699.99",Blue
-LG,gram 14T90R-K.AAB8U1 14, Intel Core i7 13th Gen 1360P 1.6GHz Processor, 16GB LPDDR5-6000 RAM, 1TB Solid State Drive,"$1,699.99",Black
-Microsoft,Surface Laptop Studio 14.4, Intel Core 11th Gen H35 i7-11370H 3.0GHz Processor, 16GB LPDDR4x RAM, 512GB Solid State Drive,"$1,899.99",Platinum
+",x,Silver
+Microsoft,Surface Pro 9 13, Intel Core i7 12th Gen 1255U 1.7GHz Processor, 16GB LPDDR5 RAM, 256GB Solid State Drive,"$1,399.99",,Platinum
+Microsoft,Surface Laptop Studio 14.4, Intel Core 11th Gen H35 i5-11300H 2.60GHz Processor, 16GB LPDDR4x RAM, 256GB Solid State Drive,"$1,399.99",,Platinum
+Microsoft,Surface Pro 9 13, Intel Core i7 12th Gen 1255U 1.7GHz Processor, 16GB LPDDR5 RAM, 512GB Solid State Drive,"$1,599.99",,Platinum
+Microsoft,Surface Pro 9 13, Intel Core i7 12th Gen 1255U 1.7GHz Processor, 16GB LPDDR5 RAM, 512GB Solid State Drive,"$1,599.99",,Graphite
+Microsoft,Surface Laptop Studio 14.4, Intel Core 11th Gen H35 i5-11300H 2.60GHz Processor, 16GB LPDDR4x RAM, 512GB Solid State Drive,"$1,599.99",,Platinum
+Dell,XPS 13 9315 13, Intel Core i7 12th Gen 1250U 0.8GHz Processor, 16GB On-board RAM, 1TB Solid State Drive,"$1,699.99",,Blue
+LG,gram 14T90R-K.AAB8U1 14, Intel Core i7 13th Gen 1360P 1.6GHz Processor, 16GB LPDDR5-6000 RAM, 1TB Solid State Drive,"$1,699.99",,Black
+Microsoft,Surface Laptop Studio 14.4, Intel Core 11th Gen H35 i7-11370H 3.0GHz Processor, 16GB LPDDR4x RAM, 512GB Solid State Drive,"$1,899.99",,Platinum
 Dell,Latitude 5330 13.3, Intel Core i7 12th Gen 1265U 1.3GHz Processor, 32GB DDR4-3200 Onboard RAM, 512GB Solid State Drive,"$949.96
-",Gray
-Microsoft,Surface Pro 9 13, Intel Core i7 12th Gen 1255U 1.7GHz Processor, 32GB LPDDR5 RAM, 1TB Solid State Drive,"$2,299.99",Platinum
-Microsoft,Surface Laptop Studio 14.4, Intel Core 11th Gen H35 i7-11370H 3.0GHz Processor, 32GB LPDDR4x RAM, 1TB Solid State Drive,"$2,299.99",Platinum
+",x,Gray
+Microsoft,Surface Pro 9 13, Intel Core i7 12th Gen 1255U 1.7GHz Processor, 32GB LPDDR5 RAM, 1TB Solid State Drive,"$2,299.99",,Platinum
+Microsoft,Surface Laptop Studio 14.4, Intel Core 11th Gen H35 i7-11370H 3.0GHz Processor, 32GB LPDDR4x RAM, 1TB Solid State Drive,"$2,299.99",,Platinum

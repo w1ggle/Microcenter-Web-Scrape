@@ -21,24 +21,37 @@ soup = BeautifulSoup(page_to_scrape.text, 'html.parser')
 
 import csv
 
-file = open('output.csv', 'w')
+file = open('test.csv', 'w')
 writer = csv.writer(file)
 writer.writerow(['Brand', 'Model', 'CPU', 'Ram', 'Storage', 'Price'])
 
 
-products = soup.findAll('li', attrs={"class":"product_wrapper"})
+products = soup.findAll('li', attrs={"class":"product_wrapper"}) #TODO check if faster using div class="results_right"
 
 for product in products:
-    brand = product.findAll("a")[1].get("data-brand") 
-    model = product.findAll("a")[1].get("data-name").replace('&quot','"') #brand and model
-    print(product.find("div", attrs={"class":"h2"}).text.split("; "))
+    brand = product.findAll("a")[1].get("data-brand") #brand and model
+    model = product.findAll("a")[1].get("data-name").replace('&quot','"') 
+
     colorIndex = model.rfind('-')
     color = model[colorIndex+2:]
     index = model.rfind('"')
-    model = model[:index]
-    cpu = product.find("li", attrs={"class":"spec_1 primary"}).text #cpu
-    ram = product.find("li", attrs={"class":"spec_2 primary"}).text #ram
-    storage = product.find("li", attrs={"class":"spec_3 primary"}).text #storage
+    model = model[:index+1]
+
+        
+    fullDetails = product.find("div", attrs={"class":"h2"}).text.split("; ") #getting specs
+    for detail in fullDetails[1:]:
+        if(detail.find("Processor") > -1):
+            cpu = detail
+        elif(detail.find("RAM") > -1):
+            ram = detail
+        elif(detail.find("Solid State Drive") > -1):
+            storage = detail
+        else:
+            gpu = detail
+
+
+
+
     
     priceOpenBox = product.find("div", attrs={"class":"clearance"}) #going to open box 
     priceOpenBoxIndex = priceOpenBox.text.find("$") #checking if open box exists
@@ -50,7 +63,7 @@ for product in products:
         price = (priceOpenBox.text[priceOpenBoxIndex:]) #open box
         openBoxStatus = "x"
 
-    writer.writerow([brand, model, cpu, ram, storage, price,openBoxStatus,color]) 
+    writer.writerow([brand, model, cpu, ram, storage,gpu, price,openBoxStatus,color]) 
 
 
 
