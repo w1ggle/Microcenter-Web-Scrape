@@ -23,7 +23,7 @@ import csv
 
 file = open('output.csv', 'w')
 writer = csv.writer(file)
-writer.writerow(['Brand', 'Product', 'CPU', 'Ram', 'Storage', 'Price'])
+writer.writerow(['Brand', 'Model', 'CPU', 'Ram', 'Storage', 'Price'])
 
 
 products = soup.findAll('li', attrs={"class":"product_wrapper"})
@@ -31,6 +31,9 @@ products = soup.findAll('li', attrs={"class":"product_wrapper"})
 for product in products:
     brand = product.findAll("a")[1].get("data-brand") 
     model = product.findAll("a")[1].get("data-name").replace('&quot','"') #brand and model
+    
+    index = model.rfind('"')
+    model = model[:index]
     cpu = product.find("li", attrs={"class":"spec_1 primary"}).text #cpu
     ram = product.find("li", attrs={"class":"spec_2 primary"}).text #ram
     storage = product.find("li", attrs={"class":"spec_3 primary"}).text #storage
@@ -43,10 +46,10 @@ for product in products:
     else:
         price = (priceOpenBox.text[priceOpenBoxIndex:]) #open box
 
-    writer.writerow([brand, model,cpu,ram,storage,price]) 
-    #print([brand, model,cpu,ram,storage,price])
+    writer.writerow([brand, model, cpu, ram, storage, price,color]) 
+
+
+
+
 file.close() 
-    
-
-
 print("DONE! Check output.csv")
