@@ -31,7 +31,8 @@ products = soup.findAll('li', attrs={"class":"product_wrapper"})
 for product in products:
     brand = product.findAll("a")[1].get("data-brand") 
     model = product.findAll("a")[1].get("data-name").replace('&quot','"') #brand and model
-    
+    colorIndex = model.rfind('-')
+    color = model[colorIndex+2:]
     index = model.rfind('"')
     model = model[:index]
     cpu = product.find("li", attrs={"class":"spec_1 primary"}).text #cpu
