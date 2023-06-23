@@ -33,7 +33,9 @@ writer.writerow(['Brand', 'Model', 'CPU', 'Ram', 'Storage', 'Price', ])
 products = soup.findAll('div', attrs={"class":"result_right"})
 
 
+
 for product in products: #getting specs
+
     brand = product.find("a").get("data-brand") 
     model = product.find("a").get("data-name").replace('&quot','"') 
 
@@ -68,9 +70,6 @@ for product in products: #getting specs
         openBoxStatus = "x"
 
     writer.writerow([brand, model, cpu, ram, storage,gpu, price,openBoxStatus, color]) #TODO mark if refurbed, get laptop size, get cpupassmark scores, see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
-
-
-
 
 file.close() 
 print("DONE! Check output.csv")
