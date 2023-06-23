@@ -48,13 +48,9 @@ for product in products: #getting specs
         index = model.find("-in-1")
     model = model[:index]
 
-    index = model.rindex(" ")
-
-    if (index != -1):
-        size = model[index:]
-        model = model[:index]
-    else:
-        size = None
+    index = model.rindex(" ")+1
+    size = model[index:-1]
+    model = model[:index]
 
     fullDetails = product.find("div", attrs={"class":"h2"}).text.split("; ") 
     for detail in fullDetails[1:]:
