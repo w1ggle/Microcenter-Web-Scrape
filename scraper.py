@@ -3,11 +3,10 @@ import setup
 from bs4 import BeautifulSoup
 import requests
 import csv
+import re
 
-URL = input("Please enter the Microcenter URL: \n") #get URL
-if (URL.find("https://www.microcenter.com") == -1 ):
-    print("not a microcenter URL, using default 2-1 laptops URL")
-    URL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
+#desirable 2-in-1 laptops from NJ microcenter
+URL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
 
 print("Installing packages") #get packages #TODO make setup an if statement
 #setup.install()
@@ -27,17 +26,17 @@ print("Response received from microcenter")
 print("Tabulating data") #parse data into table
 file = open('output.csv', 'w')
 writer = csv.writer(file)
-writer.writerow(['Brand', 'Model', 'CPU', 'Ram', 'Storage', 'Price', ])
+writer.writerow(['Brand', 'Model', 'CPU', 'Ram (GB)', 'Ram Type', 'Storage (GB)', 'GPU', 'Price', 'Refurbed' , 'Open Box', 'color', 'size' ])
 
 
-products = soup.findAll('div', attrs={"class":"result_right"})
+products = soup.findAll('div', attrs={"class":"result_right"}) #TODO look into using regex
 for product in products: #getting specs
 
     brand = product.find("a").get("data-brand") 
     model = product.find("a").get("data-name").replace('&quot','"') 
 
-    colorIndex = model.rfind('-')
-    color = model[colorIndex+2:]
+    index = model.rfind('-')
+    color = model[index+2:]
 
     if (model.find("Refurbished") == -1):
         refurbishedStatus = ""
@@ -50,19 +49,35 @@ for product in products: #getting specs
     model = model[:index]
 
     index = model.rindex(" ")
-    print(index)
-    size = model[index:]
+
+    if (index != -1):
+        size = model[index:]
+        model = model[:index]
+    else:
+        size = None
 
     fullDetails = product.find("div", attrs={"class":"h2"}).text.split("; ") 
     for detail in fullDetails[1:]:
-        if(detail.find("Processor") > -1):
+        if(detail.find("Processor") != -1):
             cpu = detail[:-17]
-        elif(detail.find("RAM") > -1):
-            ram = detail[:-4]
-        elif(detail.find("Solid State Drive") > -1):
-            storage = detail[:-18]
-        else:
+            if(cpu.find("AMD") != -1):
+                cpu = cpu[5:]
+            else:
+                index = cpu.rindex("i")
+                cpu = cpu[index:]
+                cpu = re.sub(" ..th Gen ","-",cpu)
+        elif(detail.find("RAM") != -1):
+            ram = detail[1:-4]
+            index = ram.find("GB")
+            ramCapacity = ram[:index]
+            ramType = ram[index+3:]
+        elif(detail.find("Solid State Drive") != -1):
+            storage = detail[:-18].replace("TB","000")
+            storage = storage.replace("GB","")
+        elif(detail.find("AMD") != -1 or detail.find("Intel") != -1 or detail.find("NVIDIA") != -1 ):
             gpu = detail
+        else:
+            gpu = None
 
 
 
@@ -78,7 +93,7 @@ for product in products: #getting specs
         price = (priceOpenBox.text[priceOpenBoxIndex:]) #open box
         openBoxStatus = "x"
 
-    writer.writerow([brand, model, cpu, ram, storage,gpu, price,refurbishedStatus, openBoxStatus, color, size]) #TODO mark if refurbed, get laptop size, get cpupassmark scores, see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
+    writer.writerow([brand, model, cpu, ramCapacity, ramType, storage, gpu, price,refurbishedStatus, openBoxStatus, color, size]) #TODO mark if refurbed, get laptop size, get cpupassmark scores, see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
 
 file.close() 
 print("DONE! Check output.csv")
