@@ -1,8 +1,11 @@
 # https://www.microcenter.com/robots.txt states that this should be fine to scrape their website. If a rep from microcenter wants me to remove it, feel free to contact me and I will remove this
 import setup
 
-#URL = input("Please enter the Microcenter URL: \n") #TODO make url have default case and check if microcenter url
-URL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
+URL = input("Please enter the Microcenter URL: \n")
+
+if (URL.find("https://www.microcenter.com") < 0 ):
+    print("not a microcenter URL, using default 2-1 laptops")
+    URL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
 
 print("Installing packages") #TODO make setup an if statement
 #setup.install()
@@ -33,8 +36,8 @@ for product in products:
     brand = product.find("a").get("data-brand") #brand and model
     model = product.find("a").get("data-name").replace('&quot','"') 
 
-    #colorIndex = model.rfind('-')
-    #color = model[colorIndex+2:]
+    colorIndex = model.rfind('-')
+    color = model[colorIndex+2:]
 
 
         
