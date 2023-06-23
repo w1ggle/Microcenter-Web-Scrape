@@ -5,7 +5,7 @@ import requests
 import csv
 
 URL = input("Please enter the Microcenter URL: \n") #get URL
-if (URL.find("https://www.microcenter.com") < 0 ):
+if (URL.find("https://www.microcenter.com") == -1 ):
     print("not a microcenter URL, using default 2-1 laptops URL")
     URL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
 
@@ -31,9 +31,6 @@ writer.writerow(['Brand', 'Model', 'CPU', 'Ram', 'Storage', 'Price', ])
 
 
 products = soup.findAll('div', attrs={"class":"result_right"})
-
-
-
 for product in products: #getting specs
 
     brand = product.find("a").get("data-brand") 
@@ -42,16 +39,22 @@ for product in products: #getting specs
     colorIndex = model.rfind('-')
     color = model[colorIndex+2:]
 
+    if (model.find("Refurbished") == -1):
+        refurbishedStatus = ""
+    else:
+        refurbishedStatus = "x"
 
-        
+    index = model.find(";")
+    model = model[:index]
+
     fullDetails = product.find("div", attrs={"class":"h2"}).text.split("; ") 
     for detail in fullDetails[1:]:
         if(detail.find("Processor") > -1):
-            cpu = detail
+            cpu = detail[:-17]
         elif(detail.find("RAM") > -1):
-            ram = detail
+            ram = detail[:-4]
         elif(detail.find("Solid State Drive") > -1):
-            storage = detail
+            storage = detail[:-18]
         else:
             gpu = detail
 
