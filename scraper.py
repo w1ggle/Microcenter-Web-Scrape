@@ -22,7 +22,7 @@ page_to_scrape = requests.get(URL,headers=headers)
 soup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
 print("Response received from microcenter")
 
-
+#https://www.cpubenchmark.net/CPU_mega_page.html
 print("Tabulating data") #parse data into table
 file = open('output.csv', 'w')
 writer = csv.writer(file)
