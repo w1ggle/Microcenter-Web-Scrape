@@ -1,39 +1,40 @@
 # https://www.microcenter.com/robots.txt states that this should be fine to scrape their website. If a rep from microcenter wants me to remove it, feel free to contact me and I will remove this
 import setup
+from bs4 import BeautifulSoup
+import requests
+import csv
 
-URL = input("Please enter the Microcenter URL: \n")
-
+URL = input("Please enter the Microcenter URL: \n") #get URL
 if (URL.find("https://www.microcenter.com") < 0 ):
-    print("not a microcenter URL, using default 2-1 laptops")
+    print("not a microcenter URL, using default 2-1 laptops URL")
     URL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
 
-print("Installing packages") #TODO make setup an if statement
+print("Installing packages") #get packages #TODO make setup an if statement
 #setup.install()
 print("Done installing packages")
 
-print("Scraping URL") #TODO add if statement to check if we got a request, else print error
-from bs4 import BeautifulSoup
-import requests
 
+print("Scraping URL") #get html from website #TODO add if statement to check if we got a request, else print error
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/99.0", 
     "method": "GET"
 }
 page_to_scrape = requests.get(URL,headers=headers) 
 soup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
+print("Response received from microcenter")
 
-import csv
 
-file = open('output.csv', 'w') #create CSV file
+print("Tabulating data") #parse data into table
+file = open('output.csv', 'w')
 writer = csv.writer(file)
-writer.writerow(['Brand', 'Model', 'CPU', 'Ram', 'Storage', 'Price'])
+writer.writerow(['Brand', 'Model', 'CPU', 'Ram', 'Storage', 'Price', ])
 
 
-products = soup.findAll('div', attrs={"class":"result_right"}) #TODO check if faster using div class="results_right"
+products = soup.findAll('div', attrs={"class":"result_right"})
 
 
-for product in products:
-    brand = product.find("a").get("data-brand") #brand and model
+for product in products: #getting specs
+    brand = product.find("a").get("data-brand") 
     model = product.find("a").get("data-name").replace('&quot','"') 
 
     colorIndex = model.rfind('-')
@@ -41,7 +42,7 @@ for product in products:
 
 
         
-    fullDetails = product.find("div", attrs={"class":"h2"}).text.split("; ") #getting specs
+    fullDetails = product.find("div", attrs={"class":"h2"}).text.split("; ") 
     for detail in fullDetails[1:]:
         if(detail.find("Processor") > -1):
             cpu = detail
