@@ -26,7 +26,7 @@ print("Response received from microcenter")
 print("Tabulating data") #parse data into table
 file = open('output.csv', 'w')
 writer = csv.writer(file)
-writer.writerow(['Brand', 'Model', 'CPU', 'Ram (GB)', 'Ram Type', 'Storage (GB)', 'GPU', 'Price', 'Refurbed' , 'Open Box', 'color', 'size' ])
+writer.writerow(['Brand', 'Model', 'CPU', 'Ram (GB)', 'Ram Type', 'Storage (GB)', 'GPU', 'Price ($)', 'Refurbed' , 'Open Box', 'Color', 'Size' ])
 
 
 products = soup.findAll('div', attrs={"class":"result_right"}) #TODO look into using regex
@@ -92,6 +92,8 @@ for product in products: #getting specs
     else:
         price = (priceOpenBox.text[priceOpenBoxIndex:]) #open box
         openBoxStatus = "x"
+
+    price = float(price.replace(',', '').replace('$', ''))
 
     writer.writerow([brand, model, cpu, ramCapacity, ramType, storage, gpu, price,refurbishedStatus, openBoxStatus, color, size]) #TODO mark if refurbed, get laptop size, get cpupassmark scores, see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
 
