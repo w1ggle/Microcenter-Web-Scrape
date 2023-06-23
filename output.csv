@@ -1,105 +1,105 @@
 Brand,Model,CPU,Ram,Storage,Price
 HP,"ENVY x360 15-ey0013dx 15.6""", AMD Ryzen 5 5625U, 8GB DDR4-3200, 256GB," AMD Radeon Graphics
-",$399.99,,Black
+",$399.99,x,,Black
 HP,"ENVY x360 15-ey0003ca 15.6""", AMD Ryzen 5 5625U, 16GB DDR4-3200, 512GB," AMD Radeon Graphics
-",$479.99,,Black
+",$479.99,x,,Black
 HP,"ENVY x360 Convertible 15-es1008ca 15.6""", Intel Core i5 11th Gen 1155G7, 8GB DDR4-3200, 1TB," Intel Iris Xe Graphics
-",$499.99,,Silver
+",$499.99,x,,Silver
 Lenovo,"IdeaPad Flex 5 14""", AMD Ryzen 3 PRO 7330U, 8GB LPDDR4x-4266 Onboard, 256GB," AMD Radeon Graphics
 ","$374.96
-",x,Blue
+",,x,Blue
 HP,"ENVY x360 Convertible 15-eu1073cl 15.6""", AMD Ryzen 7 5825U, 16GB DDR4-3200, 512GB," AMD Radeon Graphics
-",$549.99,,Black
+",$549.99,x,,Black
 Lenovo,"IdeaPad Flex 5 14ALC05 14""", AMD Ryzen 7 5700U, 16GB DDR4-3200 Onboard, 512GB," AMD Radeon Graphics
 ","$467.96
-",x,Grey
+",x,x,Grey
 Lenovo,"Flex 5 14""", AMD Ryzen 7 5700U, 16GB LPDDR4x-4266 Onboard, 512GB," AMD Radeon Graphics
 ","$467.96
-",x,Gray
+",x,x,Gray
 HP,"Pavilion x360 Convertible 15-er0097nr 15.6""", Intel Core i7 11th Gen 1165G7, 16GB DDR4-3200, 512GB," Intel Iris Xe Graphics
-",$579.99,,Silver
+",$579.99,x,,Silver
 Lenovo,"IdeaPad Flex 5 14""", AMD Ryzen 5 7530U, 8GB LPDDR4x-4266 Onboard, 512GB," AMD Radeon Graphics
-",$579.99,,Blue
+",$579.99,,,Blue
 HP,"ENVY x360 15-ew0023dx 15.6""", Intel Core i7 12th Gen 1255U, 16GB DDR4-3200, 512GB," Intel Iris Xe Graphics
-",$579.99,,Silver
+",$579.99,x,,Silver
 Lenovo,"IdeaPad Flex 5 16""", AMD Ryzen 5 7530U, 8GB LPDDR4x-4266 Onboard, 512GB," AMD Radeon Graphics
 ","$539.96
-",x,Arctic Grey
+",,x,Arctic Grey
 HP,"ENVY x360 Convertible 15-eu0013ca 15.6""", AMD Ryzen 7 5700U, 16GB DDR4-3200, 1TB," AMD Radeon Graphics
-",$599.99,,Black
+",$599.99,x,,Black
 Lenovo,"Flex 5i 14""", Intel Core i5 13th Gen 1335U, 8GB LPDDR4x-4266 Onboard, 512GB," Intel Iris Xe Graphics
 ","$571.96
-",x,Abyss Blue
-Lenovo,ThinkPad L13 Yoga Gen 2 -in-1 Laptop Computer - Blac, Intl Core i5 11th Gen 1145G7, 16GB DDR4-3200 Onboard, 512GB," Intel Iris Xe Graphics
+",,x,Abyss Blue
+Lenovo,ThinkPad L13 Yoga Gen 2 , Intl Core i5 11th Gen 1145G7, 16GB DDR4-3200 Onboard, 512GB," Intel Iris Xe Graphics
 ","$519.96
-",x,Black
+",,x,Black
 HP,"ENVY x360 Convertible 15-es2036nr 15.6""", Intel Core i7 12th Gen 1260P, 16GB DDR4-3200, 1TB," Intel Iris Xe Graphics
-",$649.99,,Silver
+",$649.99,x,,Silver
 Lenovo,"IdeaPad Flex 5 14""", AMD Ryzen 5 5500U, 8GB LPDDR4x-4266 Onboard, 512GB," AMD Radeon Graphics
 ","$373.96
-",x,Grey
+",,x,Grey
 Lenovo,"IdeaPad Flex 5i 14.0""", Intel Core i5 12th Gen 1235U, 8GB LPDDR4x-4266 Onboard, 512GB," Intel Iris Xe Graphics
 ","$493.96
-",x,Grey
+",,x,Grey
 HP,"ENVY x360 Convertible 15-es2003ca 15.6""", Intel Core i7 12th Gen 1260P, 16GB DDR4-3200, 1TB," Intel Iris Xe Graphics
-",$699.99,,Silver
+",$699.99,x,,Silver
 Dell,"Latitude 7430 14""", Intel Core i5 12th Gen 1245U, 16GB Onboard, 256GB," Intel Iris Xe Graphics
-",$699.99,,Gray
+",$699.99,x,,Gray
 HP,"ENVY x360 Convertible 15-es2075cl 15.6""", Intel Core i7 12th Gen 1260P, 16GB DDR4-3200, 1TB," Intel Iris Xe Graphics
-",$699.99,,Silver
+",$699.99,x,,Silver
 Acer,"Aspire 5 Spin 14 A5SP14-51MTN-52ZC 14""", Intel Core i5 13th Gen 1335U, 16GB LPDDR5 Onboard, 512GB," Intel Iris Xe Graphics
-",$699.99,,Steel Gray
+",$699.99,,,Steel Gray
 Lenovo,"IdeaPad Flex 5 16.0""", AMD Ryzen 7 5700U, 8GB LPDDR4x-4266 Onboard, 1TB," AMD Radeon Graphics
 ","$532.96
-",x,Grey
+",,x,Grey
 Acer,"Aspire 5 Spin A5SP14-51MTN-74SB 14""", Intel Core i7 13th Gen 1355U, 16GB LPDDR5 Onboard, 1TB," Intel Iris Xe Graphics
-",$799.99,,Steel Gray
+",$799.99,,,Steel Gray
 HP,"Pavilion x360 14-ek0033dx 14""", Intel Core i5 12th Gen 1235U, 8GB DDR4-3200 Onboard, 512GB," Intel UHD Graphics
-","$373.96
-",x,Silver
+","$412.96
+",,x,Silver
 Lenovo,"IdeaPad Flex 5i 16""", Intel Core i7 13th Gen 1355U, 16GB LPDDR4x-4266 Onboard, 1TB," Intel Iris Xe Graphics
-",$899.99,,Arctic Grey
+",$899.99,,,Arctic Grey
 HP,"Pavilion x360 Convertible 14-dy2035nr 14.0""", Intel Core i7 12th Gen 1255U, 16GB LPDDR4x-3200 Onboard, 1TB," Intel Iris Xe Graphics
 ","$809.96
-",x,Silver
+",,x,Silver
 Microsoft,"Surface Pro 9 13""", Intel Core i5 12th Gen 1235U, 8GB LPDDR5, 256GB," Intel Iris Xe Graphics
-",$999.99,,Graphite
+",$999.99,,,Graphite
 HP,"ENVY x 360 15-ew1068nr 15.6""", Intel Core i7 13th Gen 1355U, 16GB DDR4-3200, 1TB," Intel Iris Xe Graphics
-",$999.99,,Mineral Silver
+",$999.99,,,Mineral Silver
 Microsoft,"Surface Pro 9 13""", Intel Core i5 12th Gen 1235U, 8GB LPDDR5, 256GB," Intel Iris Xe Graphics
-",$999.99,,Platinum
+",$999.99,,,Platinum
 HP,"Spectre x360 16-f1008ca 16""", Intel Core i7 12th Gen 1260P, 16GB, 2TB," Microsoft Windows 11 Home
-","$1,099.99",,Black
+","$1,099.99",x,,Black
 Dell,"XPS 13 9315 13.4""", Intel Core i5 12th Gen 1230U, 16GB Onboard, 512GB," Intel Iris Xe Graphics
 ","$1,019.96
-",x,Blue
-HP,"Spectre x360 16-f1023dx 16""", Intel i7 12th Gen 1260P, 16GB DDR4-3200 Onboard, 1TB , Intel Arc A370M 4GB GDDR6,"$1,199.99",,Nightfall Black
+",,x,Blue
+HP,"Spectre x360 16-f1023dx 16""", Intel i7 12th Gen 1260P, 16GB DDR4-3200 Onboard, 1TB , Intel Arc A370M 4GB GDDR6,"$1,199.99",x,,Nightfall Black
 HP,"ENVY x360 Convertible 15-es2168nr 15.6""", Intel Core i7 12th Gen 1260P, 16GB DDR4-3200, 512GB," Intel Iris Xe Graphics
 ","$1,187.96
-",x,Silver
+",,x,Silver
 Microsoft,"Surface Pro 9 13""", Intel Core i7 12th Gen 1255U, 16GB LPDDR5, 256GB," Intel Iris Xe Graphics
-","$1,399.99",,Platinum
+","$1,399.99",,,Platinum
 Microsoft,"Surface Laptop Studio 14.4""", Intel Core 11th Gen H35 i5-11300H , 16GB LPDDR4x, 256GB," Intel Iris Xe Graphics
-","$1,399.99",,Platinum
+","$1,399.99",,,Platinum
 LG,"gram 14T90Q-K.AAB9U1 14.0""", Intel Core i7 12th Gen 1260P, 16GB LPDDR5-5200, 1TB," Intel Iris Xe Graphics
 ","$1,349.96
-",x,Black
+",,x,Black
 Microsoft,"Surface Laptop Studio 14.4""", Intel Core 11th Gen H35 i5-11300H , 16GB LPDDR4x, 512GB," Intel Iris Xe Graphics
-","$1,599.99",,Platinum
+","$1,599.99",,,Platinum
 Microsoft,"Surface Pro 9 13""", Intel Core i7 12th Gen 1255U, 16GB LPDDR5, 512GB," Intel Iris Xe Graphics
-","$1,599.99",,Graphite
+","$1,599.99",,,Graphite
 Microsoft,"Surface Pro 9 13""", Intel Core i7 12th Gen 1255U, 16GB LPDDR5, 512GB," Intel Iris Xe Graphics
-","$1,599.99",,Platinum
+","$1,599.99",,,Platinum
 Dell,"XPS 13 9315 13""", Intel Core i7 12th Gen 1250U, 16GB On-board, 1TB," Intel Iris Xe Graphics
-","$1,699.99",,Blue
+","$1,699.99",,,Blue
 LG,"gram 14T90R-K.AAB8U1 14""", Intel Core i7 13th Gen 1360P, 16GB LPDDR5-6000, 1TB," Intel Iris Xe Graphics
-","$1,699.99",,Black
+","$1,699.99",,,Black
 Microsoft,"Surface Laptop Studio 14.4""", Intel Core 11th Gen H35 i7-11370H, 16GB LPDDR4x, 512GB," NVIDIA GeForce RTX 3050 Ti 4GB GDDR6
-","$1,899.99",,Platinum
+","$1,899.99",,,Platinum
 Dell,"Latitude 5330 13.3""", Intel Core i7 12th Gen 1265U, 32GB DDR4-3200 Onboard, 512GB," Intel Iris Xe Graphics
 ","$949.96
-",x,Gray
+",,x,Gray
 Microsoft,"Surface Pro 9 13""", Intel Core i7 12th Gen 1255U, 32GB LPDDR5, 1TB," Intel Iris Xe Graphics
-","$2,299.99",,Platinum
+","$2,299.99",,,Platinum
 Microsoft,"Surface Laptop Studio 14.4""", Intel Core 11th Gen H35 i7-11370H, 32GB LPDDR4x, 1TB," NVIDIA GeForce RTX 3050 Ti 4GB GDDR6
-","$2,299.99",,Platinum
+","$2,299.99",,,Platinum

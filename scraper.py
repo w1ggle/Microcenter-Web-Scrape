@@ -45,6 +45,8 @@ for product in products: #getting specs
         refurbishedStatus = "x"
 
     index = model.find(";")
+    if(index == -1):
+        index = model.find("-in-1")
     model = model[:index]
 
     fullDetails = product.find("div", attrs={"class":"h2"}).text.split("; ") 
@@ -72,7 +74,7 @@ for product in products: #getting specs
         price = (priceOpenBox.text[priceOpenBoxIndex:]) #open box
         openBoxStatus = "x"
 
-    writer.writerow([brand, model, cpu, ram, storage,gpu, price,openBoxStatus, color]) #TODO mark if refurbed, get laptop size, get cpupassmark scores, see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
+    writer.writerow([brand, model, cpu, ram, storage,gpu, price,refurbishedStatus, openBoxStatus, color]) #TODO mark if refurbed, get laptop size, get cpupassmark scores, see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
 
 file.close() 
 print("DONE! Check output.csv")
