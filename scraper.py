@@ -19,17 +19,21 @@ headers = {
     "method": "GET"
 }
 page_to_scrape = requests.get(URL,headers=headers) 
-soup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
+MicroSoup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
+page_to_scrape = requests.get("https://www.cpubenchmark.net/CPU_mega_page.html",headers=headers)
+PassSoup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
+
 print("Response received from microcenter")
 
-#https://www.cpubenchmark.net/CPU_mega_page.html
+roles = PassSoup.findAll('div', attrs={"class":"block_content"})
+print(roles)
 print("Tabulating data") #parse data into table
 file = open('output.csv', 'w')
 writer = csv.writer(file)
 writer.writerow(['Brand', 'Model', 'CPU', 'Ram (GB)', 'Ram Type', 'Storage (GB)', 'GPU', 'Price ($)', 'Refurbed' , 'Open Box', 'Color', 'Size' ])
 
 
-products = soup.findAll('div', attrs={"class":"result_right"}) #TODO look into using regex
+products = MicroSoup.findAll('div', attrs={"class":"result_right"}) #TODO look into using regex
 for product in products: #getting specs
 
     brand = product.find("a").get("data-brand") 
