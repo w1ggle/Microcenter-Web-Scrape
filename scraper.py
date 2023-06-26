@@ -4,6 +4,11 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 import re
+from selenium import webdriver
+driver = webdriver.Chrome()
+driver.get('https://www.cpubenchmark.net/CPU_mega_page.html')
+html = driver.page_source
+PassSoup = BeautifulSoup(html)
 
 #desirable 2-in-1 laptops from NJ microcenter
 URL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
@@ -20,12 +25,12 @@ headers = {
 }
 page_to_scrape = requests.get(URL,headers=headers) 
 MicroSoup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
-page_to_scrape = requests.get("https://www.cpubenchmark.net/CPU_mega_page.html",headers=headers)
-PassSoup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
+#page_to_scrape = requests.get("https://www.cpubenchmark.net/CPU_mega_page.html",headers=headers)
+#PassSoup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
 
 print("Response received from microcenter")
 
-roles = PassSoup.findAll('div', attrs={"class":"block_content"})
+roles = PassSoup.findAll('tr', attrs={"role":"row"})
 print(roles)
 print("Tabulating data") #parse data into table
 file = open('output.csv', 'w')
