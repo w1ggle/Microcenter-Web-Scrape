@@ -1,4 +1,8 @@
 # https://www.microcenter.com/robots.txt states that this should be fine to scrape their website. If a rep from microcenter wants me to remove it, feel free to contact me and I will remove this. Same goes with cpu passmark!
+
+#TODO plans to add full catalog once I can figure out webdriver to switch between pages
+
+
 import setup
 from bs4 import BeautifulSoup
 import requests
