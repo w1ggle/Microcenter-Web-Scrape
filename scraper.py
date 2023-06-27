@@ -1,4 +1,4 @@
-# https://www.microcenter.com/robots.txt states that this should be fine to scrape their website. If a rep from microcenter wants me to remove it, feel free to contact me and I will remove this
+# https://www.microcenter.com/robots.txt states that this should be fine to scrape their website. If a rep from microcenter wants me to remove it, feel free to contact me and I will remove this. Same goes with cpu passmark!
 import setup
 from bs4 import BeautifulSoup
 import requests
