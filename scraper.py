@@ -1,26 +1,17 @@
 # https://www.microcenter.com/robots.txt states that this should be fine to scrape their website. If a rep from microcenter wants me to remove it, feel free to contact me and I will remove this. Same goes with cpu passmark!
 
-#TODO plans to add full catalog once I can figure out webdriver to switch between pages
-
-
 import setup
 from bs4 import BeautifulSoup
 import requests
 import csv
 import re
-from selenium import webdriver
-driver = webdriver.Chrome()
-driver.get('https://www.cpubenchmark.net/CPU_mega_page.html')
-html = driver.page_source
-PassSoup = BeautifulSoup(html)
-
-#desirable 2-in-1 laptops from NJ microcenter
-URL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
 
 print("Installing packages") #get packages #TODO make setup an if statement
 #setup.install()
 print("Done installing packages")
 
+#desirable 2-in-1 laptops from NJ microcenter
+URL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
 
 print("Scraping URL") #get html from website #TODO add if statement to check if we got a request, else print error
 headers = {
@@ -29,20 +20,14 @@ headers = {
 }
 page_to_scrape = requests.get(URL,headers=headers) 
 MicroSoup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
-#page_to_scrape = requests.get("https://www.cpubenchmark.net/CPU_mega_page.html",headers=headers)
-#PassSoup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
-
 print("Response received from microcenter")
 
-roles = PassSoup.findAll('tr', attrs={"role":"row"})
-print(roles)
 print("Tabulating data") #parse data into table
 file = open('output.csv', 'w')
 writer = csv.writer(file)
-writer.writerow(['Brand', 'Model', 'CPU', 'Ram (GB)', 'Ram Type', 'Storage (GB)', 'GPU', 'Price ($)', 'Refurbed' , 'Open Box', 'Color', 'Size' ])
+writer.writerow(['Brand', 'Model', 'CPU', 'CPU Score', 'Ram (GB)', 'Ram Type', 'Storage (GB)', 'GPU', 'Price ($)', 'Refurbed' , 'Open Box', 'Color', 'Size' ])
 
-
-products = MicroSoup.findAll('div', attrs={"class":"result_right"}) #TODO look into using regex
+products = MicroSoup.findAll('div', attrs={"class":"result_right"})
 for product in products: #getting specs
 
     brand = product.find("a").get("data-brand") 
@@ -69,12 +54,19 @@ for product in products: #getting specs
     for detail in fullDetails[1:]:
         if(detail.find("Processor") != -1):
             cpu = detail[:-17]
+
             if(cpu.find("AMD") != -1):
                 cpu = cpu[5:]
             else:
                 index = cpu.rindex("i")
                 cpu = cpu[index:]
                 cpu = re.sub(" ..th Gen ","-",cpu)
+
+            cpuPassmarkLink = "https://www.cpubenchmark.net/cpu.php?cpu=" + cpu.replace(" ","+")
+            page_to_scrape = requests.get(cpuPassmarkLink,headers=headers)
+            PassSoup = BeautifulSoup(page_to_scrape.text, 'html.parser')
+            score = PassSoup.find('span', attrs={"style":"font-family: Arial, Helvetica, sans-serif;font-size: 44px;	font-weight: bold; color: #F48A18;"}).text
+
         elif(detail.find("RAM") != -1):
             ram = detail[1:-4]
             index = ram.find("GB")
@@ -104,7 +96,7 @@ for product in products: #getting specs
 
     price = float(price.replace(',', '').replace('$', ''))
 
-    writer.writerow([brand, model, cpu, ramCapacity, ramType, storage, gpu, price,refurbishedStatus, openBoxStatus, color, size]) #TODO mark if refurbed, get laptop size, get cpupassmark scores, see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
+    writer.writerow([brand, model, cpu,score, ramCapacity, ramType, storage, gpu, price,refurbishedStatus, openBoxStatus, color, size]) #TODO mark if refurbed, get laptop size, get cpupassmark scores, see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
 
 file.close() 
 print("DONE! Check output.csv")
