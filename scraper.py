@@ -9,19 +9,23 @@ import re
 
 print("Installing packages") #get packages #TODO make setup an if statement
 #setup.install()
-print("Done installing packages")
 
 #desirable 2-in-1 laptops from NJ microcenter
-URL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
+microcenterURL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
 
-print("Scraping URL") #get html from website #TODO add if statement to check if we got a request, else print error
+print("Scraping URLs") #get html from website #TODO add if statement to check if we got a request, else print error
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/99.0", 
     "method": "GET"
 }
-page_to_scrape = requests.get(URL,headers=headers) 
+
+page_to_scrape = requests.get(microcenterURL,headers=headers) 
 MicroSoup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
-print("Response received from microcenter")
+
+passmarkURL = "https://www.cpubenchmark.net/cpu.php"
+page_to_scrape = requests.get(passmarkURL,headers=headers)
+PassSoup = BeautifulSoup(page_to_scrape.text, 'html.parser')
+cpuTable = PassSoup.findAll('tbody')
 
 print("Tabulating data") #parse data into table
 file = open('output.csv', 'w')
@@ -36,7 +40,7 @@ for product in products: #getting specs
 
     index = model.rfind('-')
     color = model[index+2:]
-
+    
     if (model.find("Refurbished") == -1):
         refurbishedStatus = ""
     else:
@@ -51,10 +55,10 @@ for product in products: #getting specs
     size = model[index:-1]
     model = model[:index]
 
-    fullDetails = product.find("div", attrs={"class":"h2"}).text.split("; ") 
-    for detail in fullDetails[1:]:
-        if(detail.find("Processor") != -1):
-            cpu = detail[:-17]
+    fullSpecs = product.find("div", attrs={"class":"h2"}).text.split("; ") 
+    for spec in fullSpecs[1:]:
+        if(spec.find("Processor") != -1):
+            cpu = spec[:-17]
 
             if(cpu.find("AMD") != -1):
                 cpu = cpu[5:]
@@ -63,21 +67,18 @@ for product in products: #getting specs
                 cpu = cpu[index:]
                 cpu = re.sub(" ..th Gen ","-",cpu)
 
-            cpuPassmarkLink = "https://www.cpubenchmark.net/cpu.php?cpu=" + cpu.replace(" ","+")
-            page_to_scrape = requests.get(cpuPassmarkLink,headers=headers)
-            PassSoup = BeautifulSoup(page_to_scrape.text, 'html.parser')
-            score = PassSoup.find('span', attrs={"style":"font-family: Arial, Helvetica, sans-serif;font-size: 44px;	font-weight: bold; color: #F48A18;"}).text
+            score = ""    
 
-        elif(detail.find("RAM") != -1):
-            ram = detail[1:-4]
+        elif(spec.find("RAM") != -1):
+            ram = spec[1:-4]
             index = ram.find("GB")
             ramCapacity = ram[:index]
             ramType = ram[index+3:]
-        elif(detail.find("Solid State Drive") != -1):
-            storage = detail[:-18].replace("TB","000")
+        elif(spec.find("Solid State Drive") != -1):
+            storage = spec[:-18].replace("TB","000")
             storage = storage.replace("GB","")
-        elif(detail.find("AMD") != -1 or detail.find("Intel") != -1 or detail.find("NVIDIA") != -1 ):
-            gpu = detail
+        elif(spec.find("AMD") != -1 or spec.find("Intel") != -1 or spec.find("NVIDIA") != -1 ):
+            gpu = spec
         else:
             gpu = None
 
