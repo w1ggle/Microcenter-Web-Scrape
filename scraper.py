@@ -25,7 +25,7 @@ MicroSoup = BeautifulSoup(page_to_scrape.text, 'html.parser')
 passmarkURL = "https://www.cpubenchmark.net/cpu.php"
 page_to_scrape = requests.get(passmarkURL,headers=headers)
 PassSoup = BeautifulSoup(page_to_scrape.text, 'html.parser')
-cpuTable = PassSoup.findAll('tbody')
+
 
 print("Tabulating data") #parse data into table
 file = open('output.csv', 'w')
@@ -55,6 +55,7 @@ for product in products: #getting specs
     size = model[index:-1]
     model = model[:index]
 
+    
     fullSpecs = product.find("div", attrs={"class":"h2"}).text.split("; ") 
     for spec in fullSpecs[1:]:
         if(spec.find("Processor") != -1):
@@ -67,7 +68,7 @@ for product in products: #getting specs
                 cpu = cpu[index:]
                 cpu = re.sub(" ..th Gen ","-",cpu)
 
-            score = ""    
+            score = PassSoup.find(string=re.compile(cpu)).parent.parent.parent.findAll("td")[1].text.replace(",","")
 
         elif(spec.find("RAM") != -1):
             ram = spec[1:-4]
