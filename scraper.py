@@ -29,14 +29,14 @@ PassSoup = BeautifulSoup(page_to_scrape.text, 'html.parser')
 print("Tabulating data") 
 file = open('output.csv', 'w')
 writer = csv.writer(file)
-writer.writerow(['Brand', 'Model', 'CPU', 'CPU Score', 'RAM (GB)', 'RAM Type', 'Storage (GB)', 'GPU', 'Size (In)', 'Color', 'Price ($)', 'Refurbed' , 'Open Box' ])
+writer.writerow(['Brand', 'Model', 'CPU', 'CPU Score', 'RAM (GB)', 'RAM Type', 'Storage (GB)', 'GPU', 'Size (In)', 'Color', 'Price ($)', 'Refurbed' , 'Open Box' ]) #create CSV file
 
-products = MicroSoup.findAll('div', attrs={"class":"result_right"})
+products = MicroSoup.findAll('div', attrs={"class":"result_right"}) #extracting data from each product
 for product in products: 
-    brand = model = cpu = score = ramCapacity = ramType = storage = gpu = price = refurbishedStatus = openBoxStatus = color = size = None
+    brand = model = cpu = score = ramCapacity = ramType = storage = gpu = price = refurbishedStatus = openBoxStatus = color = size = None #gpu is usually None but did the rest for safety
     
     brand = product.find("a").get("data-brand") 
-    model = product.find("a").get("data-name")
+    model = product.find("a").get("data-name") #example: ENVY x360 15-ey0013dx 15.6&quot; 2-in-1 Laptop Computer (Refurbished) - Black
 
     index = model.rfind('-')
     color = model[index+2:]
@@ -54,19 +54,19 @@ for product in products:
     model = model[:index]
 
     priceWrapper = product.find("div", attrs={"class":"price_wrapper"})
-    priceOpenBox = priceWrapper.find("div", attrs={"class":"clearance"}) #going to open box #TODO check if faster going to price wrapper first then check in there
-    priceOpenBoxIndex = priceOpenBox.text.find("$") #checking if open box exists
+    priceOpenBox = priceWrapper.find("div", attrs={"class":"clearance"}) 
+    priceOpenBoxIndex = priceOpenBox.text.find("$") 
     if (priceOpenBoxIndex != -1):
         price = (priceOpenBox.text[priceOpenBoxIndex:]) 
         openBoxStatus = "x"
     else:
-        price = (priceWrapper.find("span", attrs={"itemprop":"price"}).text) #normal price
+        price = (priceWrapper.find("span", attrs={"itemprop":"price"}).text) 
     price = price.replace(',', '').replace('$', '')
     
     fullSpecs = product.find("div", attrs={"class":"h2"}).text.split("; ") 
     for spec in fullSpecs[1:]:
         if(spec.find("Processor") != -1):
-            cpu = spec[:-17]
+            cpu = spec[:-17] #TODO replace all the - indexes with replace to make it more robust
 
             if(cpu.find("AMD") != -1):
                 cpu = cpu[5:]
