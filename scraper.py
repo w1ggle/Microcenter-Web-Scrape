@@ -33,8 +33,9 @@ writer.writerow(['Brand', 'Model', 'CPU', 'CPU Score', 'RAM (GB)', 'RAM Type', '
 
 products = MicroSoup.findAll('div', attrs={"class":"result_right"}) #extracting data from each product
 for product in products: 
-    brand = model = cpu = score = ramCapacity = ramType = storage = gpu = price = refurbishedStatus = openBoxStatus = color = size = None #gpu is usually None but did the rest for safety
+    brand = model = cpu = score = ramCapacity = ramType = storage = gpu = price = refurbishedStatus = openBoxStatus = color = size = link = None #gpu is usually None but did the rest for safety
     
+    link = "" #TODO add link
     brand = product.find("a").get("data-brand") 
     model = product.find("a").get("data-name") #example: ENVY x360 15-ey0013dx 15.6&quot; 2-in-1 Laptop Computer (Refurbished) - Black
 
