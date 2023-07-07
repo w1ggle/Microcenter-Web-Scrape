@@ -10,8 +10,6 @@ import re
 print("Installing packages") #get packages #TODO make setup an if statement
 #setup.install()
 
-#desirable 2-in-1 laptops from NJ microcenter
-microcenterURL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
 
 print("Scraping URLs") #get html from website #TODO add if statement to check if we got a request, else print error
 headers = {
@@ -19,6 +17,7 @@ headers = {
     "method": "GET"
 }
 
+microcenterURL = "https://www.microcenter.com/search/search_results.aspx?N=4294967288+4294818548+4294819270+4294819837+4294814254+4294814572+4294805366+4294814062+4294816439+4294818783&NTK=all&sortby=pricelow&rpp=96&storeID=075"
 page_to_scrape = requests.get(microcenterURL,headers=headers) 
 MicroSoup = BeautifulSoup(page_to_scrape.text, 'html.parser') 
 
@@ -27,27 +26,26 @@ page_to_scrape = requests.get(passmarkURL,headers=headers)
 PassSoup = BeautifulSoup(page_to_scrape.text, 'html.parser')
 
 
-print("Tabulating data") #parse data into table
+print("Tabulating data") 
 file = open('output.csv', 'w')
 writer = csv.writer(file)
-writer.writerow(['Brand', 'Model', 'CPU', 'CPU Score', 'Ram (GB)', 'Ram Type', 'Storage (GB)', 'GPU', 'Price ($)', 'Refurbed' , 'Open Box', 'Color', 'Size' ])
+writer.writerow(['Brand', 'Model', 'CPU', 'CPU Score', 'RAM (GB)', 'RAM Type', 'Storage (GB)', 'GPU', 'Size (In)', 'Color', 'Price ($)', 'Refurbed' , 'Open Box' ])
 
 products = MicroSoup.findAll('div', attrs={"class":"result_right"})
-for product in products: #getting specs
-
+for product in products: 
+    brand = model = cpu = score = ramCapacity = ramType = storage = gpu = price = refurbishedStatus = openBoxStatus = color = size = None
+    
     brand = product.find("a").get("data-brand") 
     model = product.find("a").get("data-name").replace('&quot','"') 
 
     index = model.rfind('-')
     color = model[index+2:]
     
-    if (model.find("Refurbished") == -1):
-        refurbishedStatus = ""
-    else:
+    if (model.find("Refurbished") != -1):
         refurbishedStatus = "x"
 
     index = model.find(";")
-    if(index == -1):
+    if(index == -1): #weird edge case 
         index = model.find("-in-1")
     model = model[:index]
 
@@ -55,6 +53,17 @@ for product in products: #getting specs
     size = model[index:-1]
     model = model[:index]
 
+    priceOpenBox = product.find("div", attrs={"class":"clearance"}) #going to open box #TODO check if faster going to price wrapper first then check in there
+    priceOpenBoxIndex = priceOpenBox.text.find("$") #checking if open box exists
+    
+    if (priceOpenBoxIndex != -1):
+        price = (priceOpenBox.text[priceOpenBoxIndex:]) #open box
+        openBoxStatus = "x"
+    else:
+        price = (product.find("span", attrs={"itemprop":"price"}).text) #normal price
+
+    price = float(price.replace(',', '').replace('$', ''))
+    
     
     fullSpecs = product.find("div", attrs={"class":"h2"}).text.split("; ") 
     for spec in fullSpecs[1:]:
@@ -70,37 +79,18 @@ for product in products: #getting specs
 
             score = PassSoup.find("a", string=re.compile(cpu)).parent.parent.findAll("td")[1].text.replace(",","")
 
-            print(score)
         elif(spec.find("RAM") != -1):
             ram = spec[1:-4]
+            
             index = ram.find("GB")
             ramCapacity = ram[:index]
             ramType = ram[index+3:]
         elif(spec.find("Solid State Drive") != -1):
-            storage = spec[:-18].replace("TB","000")
-            storage = storage.replace("GB","")
+            storage = spec[:-18].replace("TB","000").replace("GB","")
         elif(spec.find("AMD") != -1 or spec.find("Intel") != -1 or spec.find("NVIDIA") != -1 ):
             gpu = spec
-        else:
-            gpu = None
 
-
-
-
-    
-    priceOpenBox = product.find("div", attrs={"class":"clearance"}) #going to open box #TODO check if faster going to price wrapper first then check in there
-    priceOpenBoxIndex = priceOpenBox.text.find("$") #checking if open box exists
-    
-    if (priceOpenBoxIndex == -1):
-        price = (product.find("span", attrs={"itemprop":"price"}).text) #normal price
-        openBoxStatus = ""
-    else:
-        price = (priceOpenBox.text[priceOpenBoxIndex:]) #open box
-        openBoxStatus = "x"
-
-    price = float(price.replace(',', '').replace('$', ''))
-
-    writer.writerow([brand, model, cpu,score, ramCapacity, ramType, storage, gpu, price,refurbishedStatus, openBoxStatus, color, size]) #TODO mark if refurbed, get laptop size, get cpupassmark scores, see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
+    writer.writerow([brand, model, cpu,score, ramCapacity, ramType, storage, gpu, size, color, price, refurbishedStatus, openBoxStatus]) #TODO mark if refurbed, get laptop size, get cpupassmark scores, see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
 
 file.close() 
 print("DONE! Check output.csv")

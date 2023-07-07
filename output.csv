@@ -1,79 +1,79 @@
-Brand,Model,CPU,CPU Score,Ram (GB),Ram Type,Storage (GB),GPU,Price ($),Refurbed,Open Box,Color,Size
+Brand,Model,CPU,CPU Score,RAM (GB),RAM Type,Storage (GB),GPU,Size,Color,Price ($),Refurbed,Open Box
 HP,ENVY x360 15-ey0013dx ,Ryzen 5 5625U,15114,8,DDR4-3200, 256," AMD Radeon Graphics
-",399.99,x,,Black,15.6
+",15.6,Black,399.99,x,
 HP,ENVY x360 Convertible 15-es1008ca ,i5-1155G7,10317,8,DDR4-3200, 1000," Intel Iris Xe Graphics
-",499.99,x,,Silver,15.6
+",15.6,Silver,499.99,x,
 Lenovo,IdeaPad Flex 5 ,Ryzen 3 PRO 7330U,12913,8,LPDDR4x-4266 Onboard, 256," AMD Radeon Graphics
-",419.96,,x,Blue,14
+",14,Blue,419.96,,x
 Lenovo,Flex 5 ,Ryzen 7 5700U,15852,16,LPDDR4x-4266 Onboard, 512," AMD Radeon Graphics
-",412.96,x,x,Gray,14
+",14,Gray,412.96,x,x
 HP,ENVY x360 Convertible 15-eu1073cl ,Ryzen 7 5825U,18529,16,DDR4-3200, 512," AMD Radeon Graphics
-",549.99,x,,Black,15.6
+",15.6,Black,549.99,x,
 Lenovo,IdeaPad Flex 5 14ALC05 ,Ryzen 7 5700U,15852,16,DDR4-3200 Onboard, 512," AMD Radeon Graphics
-",412.96,x,x,Grey,14
+",14,Grey,412.96,x,x
 HP,ENVY x360 15-ew0023dx ,i7-1255U,13912,16,DDR4-3200, 512," Intel Iris Xe Graphics
-",579.99,x,,Silver,15.6
+",15.6,Silver,579.99,x,
 HP,Pavilion x360 Convertible 15-er0097nr ,i7-1165G7,10390,16,DDR4-3200, 512," Intel Iris Xe Graphics
-",579.99,x,,Silver,15.6
+",15.6,Silver,579.99,x,
 Lenovo,IdeaPad Flex 5 ,Ryzen 5 7530U,16535,8,LPDDR4x-4266 Onboard, 512," AMD Radeon Graphics
-",509.96,,x,Arctic Grey,16
+",16,Arctic Grey,509.96,,x
 HP,ENVY x360 Convertible 15-eu0013ca ,Ryzen 7 5700U,15852,16,DDR4-3200, 1000," AMD Radeon Graphics
-",599.99,x,,Black,15.6
+",15.6,Black,599.99,x,
 Lenovo,ThinkPad L13 Yoga Gen 2 ,i5-1145G7,10012,16,DDR4-3200 Onboard, 512," Intel Iris Xe Graphics
-",454.96,,x,Black,
+",,Black,454.96,,x
 HP,ENVY x360 Convertible 15-es2036nr ,i7-1260P,17391,16,DDR4-3200, 1000," Intel Iris Xe Graphics
-",649.99,x,,Silver,15.6
+",15.6,Silver,649.99,x,
 Lenovo,IdeaPad Flex 5 ,Ryzen 5 5500U,13196,8,LPDDR4x-4266 Onboard, 512," AMD Radeon Graphics
-",339.96,,x,Grey,14
+",14,Grey,339.96,,x
 Lenovo,IdeaPad Flex 5i ,i5-1235U,13639,8,LPDDR4x-4266 Onboard, 512," Intel Iris Xe Graphics
-",419.96,,x,Grey,14.0
+",14.0,Grey,419.96,,x
 Dell,Latitude 7430 ,i5-1245U,13500,16,Onboard, 256," Intel Iris Xe Graphics
-",699.99,x,,Gray,14
+",14,Gray,699.99,x,
 Acer,Aspire 5 Spin 14 A5SP14-51MTN-52ZC ,i5-1335U,19119,16,LPDDR5 Onboard, 512," Intel Iris Xe Graphics
-",699.99,,,Steel Gray,14
+",14,Steel Gray,699.99,,
 HP,ENVY x360 Convertible 15-es2075cl ,i7-1260P,17391,16,DDR4-3200, 1000," Intel Iris Xe Graphics
-",699.99,x,,Silver,15.6
+",15.6,Silver,699.99,x,
 HP,ENVY x360 Convertible 15-es2003ca ,i7-1260P,17391,16,DDR4-3200, 1000," Intel Iris Xe Graphics
-",699.99,x,,Silver,15.6
+",15.6,Silver,699.99,x,
 Lenovo,IdeaPad Flex 5 ,Ryzen 7 5700U,15852,8,LPDDR4x-4266 Onboard, 1000," AMD Radeon Graphics
-",479.96,,x,Grey,16.0
+",16.0,Grey,479.96,,x
 Lenovo,IdeaPad Flex 5 ,Ryzen 7 7730U,19227,16,LPDDR4x-4266 Onboard, 1000," AMD Radeon Graphics
-",637.96,,x,Arctic Grey,16
+",16,Arctic Grey,637.96,,x
 HP,Pavilion x360 Convertible 15-er1152nr ,i5-1235U,13639,8,DDR4-3200, 512," Intel Iris Xe Graphics
-",749.99,,,Silver,15.6
+",15.6,Silver,749.99,,
 Lenovo,IdeaPad Flex 5i ,i7-1355U,15808,16,LPDDR4x-4266 Onboard, 1000," Intel Iris Xe Graphics
-",764.96,,x,Arctic Grey,16
+",16,Arctic Grey,764.96,,x
 HP,Pavilion x360 Convertible 14-dy2035nr ,i7-1255U,13912,16,LPDDR4x-3200 Onboard, 1000," Intel Iris Xe Graphics
-",749.96,,x,Silver,14.0
-HP,Spectre x360 16-f1008ca ,i7-1260P,17391,16,, 2000,,1099.99,x,,Black,16
+",14.0,Silver,749.96,,x
+HP,Spectre x360 16-f1008ca ,i7-1260P,17391,16,, 2000,N/A,16,Black,1099.99,x,
 Microsoft,Surface Pro 9 ,i5-1235U,13639,8,LPDDR5, 256," Intel Iris Xe Graphics
-",1099.99,,,Platinum,13
+",13,Platinum,1099.99,,
 Microsoft,Surface Pro 9 ,i5-1235U,13639,8,LPDDR5, 256," Intel Iris Xe Graphics
-",1099.99,,,Graphite,13
-HP,Spectre x360 16-f1023dx ,i7-1260P,17391,16,DDR4-3200 Onboard, 1000 , Intel Arc A370M 4GB GDDR6,1199.99,x,,Nightfall Black,16
+",13,Graphite,1099.99,,
+HP,Spectre x360 16-f1023dx ,i7-1260P,17391,16,DDR4-3200 Onboard, 1000 , Intel Arc A370M 4GB GDDR6,16,Nightfall Black,1199.99,x,
 LG,gram 14T90R-K.AAB8U1 ,i7-1360P,19549,16,LPDDR5-6000, 1000," Intel Iris Xe Graphics
-",1699.99,,,Black,14
+",14,Black,1699.99,,
 HP,ENVY x360 Convertible 15-es2168nr ,i7-1260P,17391,16,DDR4-3200, 512," Intel Iris Xe Graphics
-",1121.96,,x,Silver,15.6
+",15.6,Silver,1121.96,,x
 LG,gram 14T90Q-K.AAB9U1 ,i7-1260P,17391,16,LPDDR5-5200, 1000," Intel Iris Xe Graphics
-",1124.96,,x,Black,14.0
+",14.0,Black,1124.96,,x
 Microsoft,Surface Pro 9 ,i7-1255U,13912,16,LPDDR5, 256," Intel Iris Xe Graphics
-",1599.99,,,Platinum,13
+",13,Platinum,1599.99,,
 Dell,XPS 13 9315 ,i7-1250U,12929,16,On-board, 1000," Intel Iris Xe Graphics
-",1599.99,,,Blue,13
+",13,Blue,1599.99,,
 Microsoft,Surface Laptop Studio ,i5-11300H ,10994,16,LPDDR4x, 256," Intel Iris Xe Graphics
-",1599.99,,,Platinum,14.4
+",14.4,Platinum,1599.99,,
 Microsoft,Surface Laptop Studio ,i5-11300H ,10994,16,LPDDR4x, 512," Intel Iris Xe Graphics
-",1799.99,,,Platinum,14.4
+",14.4,Platinum,1799.99,,
 Microsoft,Surface Pro 9 ,i7-1255U,13912,16,LPDDR5, 512," Intel Iris Xe Graphics
-",1899.99,,,Platinum,13
+",13,Platinum,1899.99,,
 Microsoft,Surface Pro 9 ,i7-1255U,13912,16,LPDDR5, 512," Intel Iris Xe Graphics
-",1899.99,,,Graphite,13
+",13,Graphite,1899.99,,
 Dell,Latitude 5330 ,i7-1265U,14126,32,DDR4-3200 Onboard, 512," Intel Iris Xe Graphics
-",759.96,,x,Gray,13.3
+",13.3,Gray,759.96,,x
 Microsoft,Surface Laptop Studio ,i7-11370H,11817,16,LPDDR4x, 512," NVIDIA GeForce RTX 3050 Ti 4GB GDDR6
-",2099.99,,,Platinum,14.4
+",14.4,Platinum,2099.99,,
 Microsoft,Surface Pro 9 ,i7-1255U,13912,32,LPDDR5, 1000," Intel Iris Xe Graphics
-",2599.99,,,Platinum,13
+",13,Platinum,2599.99,,
 Microsoft,Surface Laptop Studio ,i7-11370H,11817,32,LPDDR4x, 1000," NVIDIA GeForce RTX 3050 Ti 4GB GDDR6
-",2699.99,,,Platinum,14.4
+",14.4,Platinum,2699.99,,
