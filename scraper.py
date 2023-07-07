@@ -55,15 +55,12 @@ for product in products:
 
     priceOpenBox = product.find("div", attrs={"class":"clearance"}) #going to open box #TODO check if faster going to price wrapper first then check in there
     priceOpenBoxIndex = priceOpenBox.text.find("$") #checking if open box exists
-    
     if (priceOpenBoxIndex != -1):
-        price = (priceOpenBox.text[priceOpenBoxIndex:]) #open box
+        price = (priceOpenBox.text[priceOpenBoxIndex:]) 
         openBoxStatus = "x"
     else:
         price = (product.find("span", attrs={"itemprop":"price"}).text) #normal price
-
-    price = float(price.replace(',', '').replace('$', ''))
-    
+    price = price.replace(',', '').replace('$', '')
     
     fullSpecs = product.find("div", attrs={"class":"h2"}).text.split("; ") 
     for spec in fullSpecs[1:]:
@@ -90,7 +87,7 @@ for product in products:
         elif(spec.find("AMD") != -1 or spec.find("Intel") != -1 or spec.find("NVIDIA") != -1 ):
             gpu = spec
 
-    writer.writerow([brand, model, cpu,score, ramCapacity, ramType, storage, gpu, size, color, price, refurbishedStatus, openBoxStatus]) #TODO mark if refurbed, get laptop size, get cpupassmark scores, see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
+    writer.writerow([brand, model, cpu,score, ramCapacity, ramType, storage, gpu, size, color, price, refurbishedStatus, openBoxStatus]) #TODO see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
 
 file.close() 
 print("DONE! Check output.csv")
