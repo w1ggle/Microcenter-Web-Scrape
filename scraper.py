@@ -1,5 +1,5 @@
 # https://www.microcenter.com/robots.txt states that this should be fine to scrape their website. If a rep from microcenter wants me to remove it, feel free to contact me and I will remove this
-# https://www.cpubenchmark.net/robots.txt tates that this should be fine to scrape their website. If a rep from passmark wants me to remove it, feel free to contact me and I will remove this
+# https://www.cpubenchmark.net/robots.txt states that this should be fine to scrape their website. If a rep from passmark wants me to remove it, feel free to contact me and I will remove this
 
 import setup
 from bs4 import BeautifulSoup
@@ -68,8 +68,9 @@ for product in products: #getting specs
                 cpu = cpu[index:]
                 cpu = re.sub(" ..th Gen ","-",cpu)
 
-            score = PassSoup.find(string=re.compile(cpu)).parent.parent.parent.findAll("td")[1].text.replace(",","")
+            score = PassSoup.find("a", string=re.compile(cpu)).parent.parent.findAll("td")[1].text.replace(",","")
 
+            print(score)
         elif(spec.find("RAM") != -1):
             ram = spec[1:-4]
             index = ram.find("GB")
