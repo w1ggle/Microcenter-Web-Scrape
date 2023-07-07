@@ -36,7 +36,7 @@ for product in products:
     brand = model = cpu = score = ramCapacity = ramType = storage = gpu = price = refurbishedStatus = openBoxStatus = color = size = None
     
     brand = product.find("a").get("data-brand") 
-    model = product.find("a").get("data-name").replace('&quot','"') 
+    model = product.find("a").get("data-name")
 
     index = model.rfind('-')
     color = model[index+2:]
@@ -50,16 +50,17 @@ for product in products:
     model = model[:index]
 
     index = model.rindex(" ")+1
-    size = model[index:-1]
+    size = model[index:].replace('&quot','') 
     model = model[:index]
 
-    priceOpenBox = product.find("div", attrs={"class":"clearance"}) #going to open box #TODO check if faster going to price wrapper first then check in there
+    priceWrapper = product.find("div", attrs={"class":"price_wrapper"})
+    priceOpenBox = priceWrapper.find("div", attrs={"class":"clearance"}) #going to open box #TODO check if faster going to price wrapper first then check in there
     priceOpenBoxIndex = priceOpenBox.text.find("$") #checking if open box exists
     if (priceOpenBoxIndex != -1):
         price = (priceOpenBox.text[priceOpenBoxIndex:]) 
         openBoxStatus = "x"
     else:
-        price = (product.find("span", attrs={"itemprop":"price"}).text) #normal price
+        price = (priceWrapper.find("span", attrs={"itemprop":"price"}).text) #normal price
     price = price.replace(',', '').replace('$', '')
     
     fullSpecs = product.find("div", attrs={"class":"h2"}).text.split("; ") 
