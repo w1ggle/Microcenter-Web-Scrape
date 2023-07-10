@@ -39,10 +39,10 @@ for product in products:
     brand = product.find("a").get("data-brand") 
     model = product.find("a").get("data-name") #example: ENVY x360 15-ey0013dx 15.6&quot; 2-in-1 Laptop Computer (Refurbished) - Black
 
-    index = model.rfind('-')
-    color = model[index+2:]
+    index = model.rfind(' ')
+    color = model[index+1:]
     
-    if (model.find("Refurbished") != -1):
+    if (model.find("Refurbished",index - 20) != -1):
         refurbishedStatus = "x"
 
     index = model.find(";")
