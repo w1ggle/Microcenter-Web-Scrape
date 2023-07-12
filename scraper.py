@@ -7,11 +7,12 @@ import requests
 import csv
 import re
 
-print("Installing packages") #get packages #TODO make setup an if statement
+#get packages
+print("Installing packages")  #TODO make setup an if statement
 #setup.install()
 
-
-print("Scraping URLs") #get html from website #TODO add if statement to check if we got a request, else print error
+#get html from website
+print("Scraping URLs")  #TODO add if statement to check if we got a request, else print error
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/99.0", 
     "method": "GET"
@@ -26,6 +27,7 @@ page_to_scrape = requests.get(passmarkURL,headers=headers)
 PassSoup = BeautifulSoup(page_to_scrape.text, 'html.parser')
 
 
+#tabulating
 print("Tabulating data") 
 file = open('output.csv', 'w')
 writer = csv.writer(file)
@@ -51,7 +53,7 @@ for product in products:
     model = model[:index]
 
     index = model.rindex(" ")+1
-    size = model.replace('&quot','')[index:]
+    size = model[index:].replace('&quot','')
     model = model[:index]
 
     priceWrapper = product.find("div", attrs={"class":"price_wrapper"})
@@ -62,7 +64,7 @@ for product in products:
         openBoxStatus = "x"
     else:
         price = (priceWrapper.find("span", attrs={"itemprop":"price"}).text) 
-    price = price.replace(',', '').replace('$', '')
+    price = price.replace(',', '').replace('$', '') #remove $ sign and , so that it sorts correctly
     
     fullSpecs = product.find("div", attrs={"class":"h2"}).text.split("; ") 
     for spec in fullSpecs[1:]:
