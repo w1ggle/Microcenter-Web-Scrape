@@ -51,7 +51,7 @@ for product in products:
     model = model[:index]
 
     index = model.rindex(" ")+1
-    size = model[index:].replace('&quot','') 
+    size = model.replace('&quot','')[index:]
     model = model[:index]
 
     priceWrapper = product.find("div", attrs={"class":"price_wrapper"})
