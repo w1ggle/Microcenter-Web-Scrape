@@ -37,7 +37,7 @@ products = MicroSoup.findAll('div', attrs={"class":"result_right"}) #extracting 
 for product in products: 
     brand = model = cpu = score = ramCapacity = ramType = storage = gpu = price = refurbishedStatus = openBoxStatus = color = size = link = None #gpu is usually None but did the rest for safety
     
-    link = 'https://www.microcenter.com' + product.find("a").get("href")
+    link = 'https://www.microcenter.com' + product.find("a").get("href") #TODO see if I can hyperlink
     brand = product.find("a").get("data-brand") 
     model = product.find("a").get("data-name") #example: ENVY x360 15-ey0013dx 15.6&quot; 2-in-1 Laptop Computer (Refurbished) - Black 
 
