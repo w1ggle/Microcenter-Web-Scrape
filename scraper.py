@@ -31,15 +31,15 @@ PassSoup = BeautifulSoup(page_to_scrape.text, 'html.parser')
 print("Tabulating data") 
 file = open('output.csv', 'w')
 writer = csv.writer(file)
-writer.writerow(['Brand', 'Model', 'CPU', 'CPU Score', 'RAM (GB)', 'RAM Type', 'Storage (GB)', 'GPU', 'Size (In)', 'Color', 'Price ($)', 'Refurbed' , 'Open Box' ]) #create CSV file
+writer.writerow(['Brand', 'Model', 'CPU', 'CPU Score', 'RAM (GB)', 'RAM Type', 'Storage (GB)', 'GPU', 'Size (In)', 'Color', 'Price ($)', 'Refurbed' , 'Open Box', 'Link' ]) #create CSV file
 
 products = MicroSoup.findAll('div', attrs={"class":"result_right"}) #extracting data from each product
 for product in products: 
     brand = model = cpu = score = ramCapacity = ramType = storage = gpu = price = refurbishedStatus = openBoxStatus = color = size = link = None #gpu is usually None but did the rest for safety
     
-    link = "" #TODO add link
+    link = 'https://www.microcenter.com' + product.find("a").get("href")
     brand = product.find("a").get("data-brand") 
-    model = product.find("a").get("data-name") #example: ENVY x360 15-ey0013dx 15.6&quot; 2-in-1 Laptop Computer (Refurbished) - Black
+    model = product.find("a").get("data-name") #example: ENVY x360 15-ey0013dx 15.6&quot; 2-in-1 Laptop Computer (Refurbished) - Black 
 
     index = model.rfind(' ')
     color = model[index+1:]
@@ -55,7 +55,7 @@ for product in products:
     index = model.rindex(" ")+1
     size = model[index:].replace('&quot','')
     model = model[:index]
-
+    
     priceWrapper = product.find("div", attrs={"class":"price_wrapper"})
     priceOpenBox = priceWrapper.find("div", attrs={"class":"clearance"}) 
     priceOpenBoxIndex = priceOpenBox.text.find("$") 
@@ -66,23 +66,19 @@ for product in products:
         price = (priceWrapper.find("span", attrs={"itemprop":"price"}).text) 
     price = price.replace(',', '').replace('$', '') #remove $ sign and , so that it sorts correctly
     
-    fullSpecs = product.find("div", attrs={"class":"h2"}).text.split("; ") 
+    fullSpecs = product.find("div", attrs={"class":"h2"}).text.split("; ") #example: HP ENVY x360 Convertible 15-eu1073cl 15.6" 2-in-1 Laptop Computer (Refurbished) - Black;  AMD Ryzen 7 5825U 2.0GHz Processor;  16GB DDR4-3200 RAM;  512GB Solid State Drive;  AMD Radeon Graphics
     for spec in fullSpecs[1:]:
         if(spec.find("Processor") != -1):
-            cpu = spec[:-17] #TODO replace all the - indexes with replace to make it more robust
-
+            cpu = spec[:-17]
             if(cpu.find("AMD") != -1):
                 cpu = cpu[5:]
             else:
                 index = cpu.rindex("i")
                 cpu = cpu[index:]
                 cpu = re.sub(" ..th Gen ","-",cpu)
-
             score = PassSoup.find("a", string=re.compile(cpu)).parent.parent.findAll("td")[1].text.replace(",","")
-
         elif(spec.find("RAM") != -1):
-            ram = spec[1:-4]
-            
+            ram = spec[1:-4] 
             index = ram.find("GB")
             ramCapacity = ram[:index]
             ramType = ram[index+3:]
@@ -91,7 +87,7 @@ for product in products:
         elif(spec.find("AMD") != -1 or spec.find("Intel") != -1 or spec.find("NVIDIA") != -1 ):
             gpu = spec
 
-    writer.writerow([brand, model, cpu,score, ramCapacity, ramType, storage, gpu, size, color, price, refurbishedStatus, openBoxStatus]) #TODO see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
+    writer.writerow([brand, model, cpu,score, ramCapacity, ramType, storage, gpu, size, color, price, refurbishedStatus, openBoxStatus, link]) #TODO see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
 
 file.close() 
 print("DONE! Check output.csv")
