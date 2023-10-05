@@ -6,6 +6,9 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 import re
+from datetime import date
+
+
 
 #get packages
 print("Installing packages")  #TODO make setup an if statement
@@ -95,4 +98,7 @@ for product in products:
     writer.writerow([brand, model, cpu,score, ramCapacity, ramType, storage, gpu, size, color, price, refurbishedStatus, openBoxStatus, link]) #TODO see if its possible to get ALL inventory and not just 96 results, add my own personal score/rating, make csv 2 sheets where 1 is for calulations and other is for front end
 
 file.close() 
-print("DONE! Check output.csv")
+
+today = date.today()
+
+print("DONE! Check output.csv for prices as of " + today.strftime("%m/%d/%y"))
