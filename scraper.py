@@ -81,8 +81,11 @@ for product in products:
                 cpu = re.sub(" ..th Gen ","-",cpu) #Intel Core i7 13th Gen 13700H Processor
                 #print(cpu)
             index = cpu.rfind(" ")
-            
-            score = PassSoup.find("a", string=re.compile(cpu)).parent.parent.findAll("td")[1].text.replace(",","")
+            cpu=cpu[:index]
+            index = cpu.rfind(" ")
+            if(index != -1 ):
+                cpu=cpu[:index]
+            #score = PassSoup.find("a", string=re.compile(cpu)).parent.parent.findAll("td")[1].text.replace(",","")
         elif(spec.find("RAM") != -1):
             ram = spec[1:-4] 
             index = ram.find("GB")
