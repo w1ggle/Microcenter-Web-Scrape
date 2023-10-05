@@ -11,7 +11,7 @@ from datetime import date
 
 
 #get packages
-print("Installing packages")  #TODO make setup an if statement
+print("Installing packages") 
 setup.install()
 
 #get html from website
