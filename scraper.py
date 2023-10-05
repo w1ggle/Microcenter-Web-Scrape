@@ -40,9 +40,10 @@ for product in products:
     #product = product.find('div', attrs={"class" : "pDescription compressedNormal4"}) #checking new location
     
     link = 'https://www.microcenter.com' + product.findAll("a")[1].get("href")
-    brand = product.findAll("a").get("data-brand") 
+    brand = product.findAll("a")[1].get("data-brand") 
     model = product.findAll("a")[1].get("data-name") #example: ENVY x360 15-ey0013dx 15.6&quot; 2-in-1 Laptop Computer (Refurbished) - Black 
 
+    #print(link)
     index = model.rfind(' ')
     color = model[index+1:]
     
@@ -71,13 +72,16 @@ for product in products:
     fullSpecs = product.find("div", attrs={"class":"h2"}).text.split("; ") #example: HP ENVY x360 Convertible 15-eu1073cl 15.6" 2-in-1 Laptop Computer (Refurbished) - Black;  AMD Ryzen 7 5825U 2.0GHz Processor;  16GB DDR4-3200 RAM;  512GB Solid State Drive;  AMD Radeon Graphics
     for spec in fullSpecs[1:]:
         if(spec.find("Processor") != -1):
-            cpu = spec[:-17]
+            cpu = spec[:-9]
             if(cpu.find("AMD") != -1):
                 cpu = cpu[5:]
             else:
                 index = cpu.rindex("i")
                 cpu = cpu[index:]
-                cpu = re.sub(" ..th Gen ","-",cpu)
+                cpu = re.sub(" ..th Gen ","-",cpu) #Intel Core i7 13th Gen 13700H Processor
+                #print(cpu)
+            index = cpu.rfind(" ")
+            
             score = PassSoup.find("a", string=re.compile(cpu)).parent.parent.findAll("td")[1].text.replace(",","")
         elif(spec.find("RAM") != -1):
             ram = spec[1:-4] 
