@@ -1,86 +1,93 @@
 Brand,Model,CPU,CPU Score,RAM (GB),RAM Type,Storage (GB),GPU,Size (In),Color,Price ($),Refurbed,Open Box,Link
-HP,ENVY x360 15-ey0013dx ,Ryzen 5 5625U,15131,8,DDR4-3200, 256," AMD Radeon Graphics
-",15.6,Black,399.99,x,,https://www.microcenter.com/product/660467/hp-envy-x360-15-ey0013dx-156-2-in-1-laptop-computer-(refurbished)-black
-HP,Pavilion x360 14-ek0033dx ,i5-1235U,13644,8,DDR4-3200 Onboard, 512," Intel Iris Xe Graphics
+,Pavilion x360 14-ek0033dx ,i5-1235U,13645,8,DDR4-3200 Onboard, 512," Intel Iris Xe Graphics
 ",14.0,Silver,399.99,x,,https://www.microcenter.com/product/660468/hp-pavilion-x360-14-ek0033dx-140-2-in-1-laptop-computer-(refurbished)-silver
-HP,ENVY x360 Convertible 15-es1008ca ,i5-1155G7,10323,8,DDR4-3200, 1000," Intel Iris Xe Graphics
-",15.6,Silver,499.99,x,,https://www.microcenter.com/product/651057/hp-envy-x360-convertible-15-es1008ca-156-2-in-1-laptop-computer-(refurbished)-silver
-Lenovo,IdeaPad Flex 5 ,Ryzen 3 PRO 7330U,12846,8,LPDDR4x-4266 Onboard, 256," AMD Radeon Graphics
-",14,Blue,"419.96
-",,x,https://www.microcenter.com/product/664066/lenovo-ideapad-flex-5-14-2-in-1-laptop-computer-blue
-HP,ENVY x360 Convertible 15-eu1073cl ,Ryzen 7 5825U,18542,16,DDR4-3200, 512," AMD Radeon Graphics
-",15.6,Black,549.99,x,,https://www.microcenter.com/product/661888/hp-envy-x360-convertible-15-eu1073cl-156-2-in-1-laptop-computer-(refurbished)-black
-Lenovo,Flex 5 ,Ryzen 7 5700U,15851,16,LPDDR4x-4266 Onboard, 512," AMD Radeon Graphics
-",14,Gray,"467.96
-",x,x,https://www.microcenter.com/product/662601/lenovo-flex-5-14-2-in-1-laptop-computer-(factory-refurbished)-gray?ob=1
-HP,ENVY x360 15-ew0023dx ,i7-1255U,13935,16,DDR4-3200, 512," Intel Iris Xe Graphics
-",15.6,Silver,579.99,x,,https://www.microcenter.com/product/661890/hp-envy-x360-15-ew0023dx-156-intel-evo-platform-2-in-1-laptop-computer-(refurbished)-silver
-Lenovo,IdeaPad Flex 5 ,Ryzen 5 7530U,16500,8,LPDDR4x-4266 Onboard, 512," AMD Radeon Graphics
-",14,Blue,579.99,,,https://www.microcenter.com/product/664068/lenovo-ideapad-flex-5-14-2-in-1-laptop-computer-blue
-HP,Pavilion x360 Convertible 15-er0097nr ,i7-1165G7,10380,16,DDR4-3200, 512," Intel Iris Xe Graphics
-",15.6,Silver,579.99,x,,https://www.microcenter.com/product/643048/hp-pavilion-x360-convertible-15-er0097nr-156-2-in-1-laptop-computer-(refurbished)-silver
-HP,ENVY x360 Convertible 15-eu0013ca ,Ryzen 7 5700U,15851,16,DDR4-3200, 1000," AMD Radeon Graphics
-",15.6,Black,599.99,x,,https://www.microcenter.com/product/648395/hp-envy-x360-convertible-15-eu0013ca-156-2-in-1-laptop-computer-refurbished-black
-Lenovo,IdeaPad Flex 5 ,Ryzen 5 7530U,16500,8,LPDDR4x-4266 Onboard, 512," AMD Radeon Graphics
+,ENVY x360 15-ew0023dx ,i7-1255U,13833,16,DDR4-3200, 512," Intel Iris Xe Graphics
+",15.6,Silver,"412.96
+",x,x,https://www.microcenter.com/product/661890/hp-envy-x360-15-ew0023dx-156-intel-evo-platform-2-in-1-laptop-computer-(refurbished)-silver
+,IdeaPad Flex 5 ,Ryzen 5 7530U,16117,8,LPDDR4x-4266 Onboard, 512," AMD Radeon Graphics
+",14,Blue,"566.96
+",,x,https://www.microcenter.com/product/664068/lenovo-ideapad-flex-5-14-2-in-1-laptop-computer-blue
+,IdeaPad Flex 5 ,Ryzen 7 5700U,15836,8,LPDDR4x-4266 Onboard, 1000," AMD Radeon Graphics
+",16.0,Grey,"487.96
+",,x,https://www.microcenter.com/product/649366/lenovo-ideapad-flex-5-160-2-in-1-laptop-computer-grey?ob=1
+,IdeaPad Flex 5 ,Ryzen 5 7530U,16117,8,LPDDR4x-4266 Onboard, 512," AMD Radeon Graphics
 ",16,Grey,"509.96
 ",,x,https://www.microcenter.com/product/664069/lenovo-ideapad-flex-5-16-2-in-1-laptop-computer-arctic-grey
-Lenovo,Flex 5i ,i5-1335U,19003,8,LPDDR4x-4266 Onboard, 512," Intel Iris Xe Graphics
-",14,Blue,"584.96
-",,x,https://www.microcenter.com/product/664080/lenovo-flex-5i-14-2-in-1-laptop-computer-abyss-blue?ob=1
-Lenovo,IdeaPad Flex 5 ,Ryzen 5 5500U,13194,8,LPDDR4x-4266 Onboard, 512," AMD Radeon Graphics
-",14,Grey,"339.96
+,IdeaPad Flex 5 ,Ryzen 5 5500U,13175,8,LPDDR4x-4266 Onboard, 512," AMD Radeon Graphics
+",14,Grey,"526.96
 ",,x,https://www.microcenter.com/product/649365/lenovo-ideapad-flex-5-14-2-in-1-laptop-computer-grey?ob=1
-Dell,Latitude 7430 ,i5-1245U,13569,16,Onboard, 256," Intel Iris Xe Graphics
-",14,Gray,699.99,x,,https://www.microcenter.com/product/660393/dell-latitude-7430-14-2-in-1-laptop-computer-(refurbished)-gray
-HP,ENVY x360 Convertible 15-es2075cl ,i7-1260P,17393,16,DDR4-3200, 1000," Intel Iris Xe Graphics
-",15.6,Silver,699.99,x,,https://www.microcenter.com/product/661887/hp-envy-x360-convertible-15-es2075cl-156-intel-evo-platform-2-in-1-laptop-computer-(refurbished)-silver
-Lenovo,IdeaPad Flex 5 ,Ryzen 7 5700U,15851,8,LPDDR4x-4266 Onboard, 1000," AMD Radeon Graphics
-",16.0,Grey,"479.96
-",,x,https://www.microcenter.com/product/649366/lenovo-ideapad-flex-5-160-2-in-1-laptop-computer-grey?ob=1
-Lenovo,IdeaPad Flex 5 ,Ryzen 7 7730U,18881,16,LPDDR4x-4266 Onboard, 1000," AMD Radeon Graphics
-",16,Grey,"674.96
-",,x,https://www.microcenter.com/product/664071/lenovo-ideapad-flex-5-16-2-in-1-laptop-computer-arctic-grey
-HP,Pavilion x360 Convertible 15-er1152nr ,i5-1235U,13644,8,DDR4-3200, 512," Intel Iris Xe Graphics
+,IdeaPad Flex 5 ,Ryzen 3 PRO 7330U,12846,8,LPDDR4x-4266 Onboard, 256," AMD Radeon Graphics
+",14,Blue,"494.96
+",,x,https://www.microcenter.com/product/664066/lenovo-ideapad-flex-5-14-2-in-1-laptop-computer-blue?ob=1
+,Flex 5i ,i5-1335U,17808,8,LPDDR4x-4266 Onboard, 512," Intel Iris Xe Graphics
+",14,Blue,"559.96
+",,x,https://www.microcenter.com/product/664080/lenovo-flex-5i-14-2-in-1-laptop-computer-abyss-blue
+,Aspire 5 Spin 14 A5SP14-51MTN-52ZC ,i5-1335U,17808,16,LPDDR5 Onboard, 512," Intel Iris Xe Graphics
+",14,Gray,669.99,,,https://www.microcenter.com/product/664419/acer-aspire-5-spin-14-a5sp14-51mtn-52zc-14-2-in-1-laptop-computer-steel-gray
+,ENVY x360 Convertible 15-eu1073cl ,Ryzen 7 5825U,18427,16,DDR4-3200, 512," AMD Radeon Graphics
+",15.6,Black,679.99,x,,https://www.microcenter.com/product/673460/hp-envy-x360-convertible-15-eu1073cl-156-2-in-1-laptop-computer-(refurbished)-black
+,Vivobook S 16 Flip TN3604YA-DS51T ,Ryzen 5 7530U,16117,8,DDR4 Onboard, 512," AMD Radeon Vega 7 Graphics
+",2,Black,699.99,,,https://www.microcenter.com/product/670038/asus-vivobook-s-16-flip-tn3604ya-ds51t-2-in-1-laptop-computer-midnight-black
+,ENVY x360 Convertible 15-es2003ca ,i7-1260P,17266,16,DDR4-3200, 1000," Intel Iris Xe Graphics
+",15.6,Silver,"594.96
+",x,x,https://www.microcenter.com/product/661880/hp-envy-x360-convertible-15-es2003ca-156-intel-evo-platform-2-in-1-laptop-computer-(refurbished)-silver?ob=1
+,ThinkPad X13 Yoga Gen 2 ,i7-1185G7,10572,16,LPDDR4x-4266 Onboard, 512," Intel Iris Xe Graphics
+",13.3,Black,"674.96
+",,x,https://www.microcenter.com/product/668308/lenovo-thinkpad-x13-yoga-gen-2-133-2-in-1-laptop-computer-black
+,IdeaPad Flex 5 ,Ryzen 7 7730U,18862,16,LPDDR4x-4266 Onboard, 1000," AMD Radeon Graphics
+",16,Grey,749.99,,,https://www.microcenter.com/product/664071/lenovo-ideapad-flex-5-16-2-in-1-laptop-computer-arctic-grey
+,Pavilion x360 Convertible 15-er1152nr ,i5-1235U,13645,8,DDR4-3200, 512," Intel Iris Xe Graphics
 ",15.6,Silver,749.99,,,https://www.microcenter.com/product/649865/hp-pavilion-x360-convertible-15-er1152nr-156-2-in-1-laptop-computer-silver
-Acer,Aspire 5 Spin A5SP14-51MTN-74SB ,i7-1355U,15987,16,LPDDR5 Onboard, 1000," Intel Iris Xe Graphics
-",14,Gray,799.99,,,https://www.microcenter.com/product/664421/acer-aspire-5-spin-a5sp14-51mtn-74sb-14-2-in-1-laptop-computer-steel-gray
-HP,Pavilion x360 14-ek0033dx ,i5-1235U,13644,8,DDR4-3200 Onboard, 512," Intel UHD Graphics
-",14,Silver,829.99,,,https://www.microcenter.com/product/663019/hp-pavilion-x360-14-ek0033dx-14-2-in-1-laptop-computer-silver
-Lenovo,IdeaPad Flex 5i ,i7-1355U,15987,16,LPDDR4x-4266 Onboard, 1000," Intel Iris Xe Graphics
-",16,Grey,"764.96
-",,x,https://www.microcenter.com/product/664082/lenovo-ideapad-flex-5i-16-2-in-1-laptop-computer-arctic-grey?ob=1
-Microsoft,Surface Pro 9 ,i5-1235U,13644,8,LPDDR5, 256," Intel Iris Xe Graphics
-",13,Platinum,949.99,,,https://www.microcenter.com/product/659466/microsoft-surface-pro-9-13-intel-evo-platform-2-in-1-laptop-computer-platinum
-Microsoft,Surface Pro 9 ,i5-1235U,13644,8,LPDDR5, 256," Intel Iris Xe Graphics
-",13,Graphite,949.99,,,https://www.microcenter.com/product/659467/microsoft-surface-pro-9-13-intel-evo-platform-2-in-1-laptop-computer-graphite
-HP,ENVY x 360 15-ew1068nr ,i7-1355U,15987,16,DDR4-3200, 1000," Intel Iris Xe Graphics
-",15.6,Silver,"899.96
-",,x,https://www.microcenter.com/product/664646/hp-envy-x-360-15-ew1068nr-156-2-in-1-laptop-computer-mineral-silver
-HP,Pavilion x360 Convertible 14-dy2035nr ,i7-1255U,13935,16,LPDDR4x-3200 Onboard, 1000," Intel Iris Xe Graphics
+,Aspire 5 Spin A5SP14-51MTN-74SB ,i7-1355U,15357,16,LPDDR5 Onboard, 1000," Intel Iris Xe Graphics
+",14,Gray,779.99,,,https://www.microcenter.com/product/664421/acer-aspire-5-spin-a5sp14-51mtn-74sb-14-2-in-1-laptop-computer-steel-gray
+,IdeaPad Flex 5i ,i7-1355U,15357,16,LPDDR4x-4266 Onboard, 1000," Intel Iris Xe Graphics
+",16,Grey,"809.96
+",,x,https://www.microcenter.com/product/664082/lenovo-ideapad-flex-5i-16-2-in-1-laptop-computer-arctic-grey
+,Spectre x360 16-f2013dx ,i7-13700H,28418,16,DDR4-3200, 512," Intel Iris Xe Graphics
+",16,Black,899.99,,,https://www.microcenter.com/product/669447/hp-spectre-x360-16-f2013dx-16-intel-evo-platform-2-in-1-laptop-computer-(refurbished)-nightfall-black
+,Spectre x360 16-f1023dx ,i7-1260P,17266,16,DDR4-3200 Onboard, 1000 , Intel Arc A370M 4GB GDDR6,16,Black,"749.96
+",,x,https://www.microcenter.com/product/666329/hp-spectre-x360-16-f1023dx-16-intel-evo-platform-2-in-1-laptop-computer-(refurbished)-nightfall-black
+,Pavilion x360 Convertible 14-dy2035nr ,i7-1255U,13833,16,LPDDR4x-3200 Onboard, 1000," Intel Iris Xe Graphics
 ",14.0,Silver,"749.96
-",,x,https://www.microcenter.com/product/649169/hp-pavilion-x360-convertible-14-dy2035nr-140-2-in-1-laptop-computer-silver?ob=1
-HP,Spectre x360 16-f1008ca ,i7-1260P,17393,16,, 2000,,16,Black,1099.99,x,,https://www.microcenter.com/product/663614/hp-spectre-x360-16-f1008ca-16-intel-evo-platform-2-in-1-laptop-computer-(refurbished)-black
-HP,Spectre x360 16-f1023dx ,i7-1260P,17393,16,DDR4-3200 Onboard, 1000 , Intel Arc A370M 4GB GDDR6,16,Black,1099.99,,,https://www.microcenter.com/product/666329/hp-spectre-x360-16-f1023dx-16-intel-evo-platform-2-in-1-laptop-computer-(refurbished)-nightfall-black
-Microsoft,Surface Pro 9 ,i7-1255U,13935,16,LPDDR5, 256," Intel Iris Xe Graphics
-",13,Platinum,1299.99,,,https://www.microcenter.com/product/659475/microsoft-surface-pro-9-13-2-in-1-intel-evo-platform-laptop-computer-platinum
-Dell,XPS 13 9315 ,i5-1230U,10505,16,Onboard, 512," Intel Iris Xe Graphics
-",13.4,Blue,1299.99,,,https://www.microcenter.com/product/661171/dell-xps-13-9315-134-intel-evo-platform-2-in-1-laptop-computer-blue
-HP,ENVY x360 Convertible 15-es2168nr ,i7-1260P,17393,16,DDR4-3200, 512," Intel Iris Xe Graphics
-",15.6,Silver,"1121.96
-",,x,https://www.microcenter.com/product/651098/hp-envy-x360-convertible-15-es2168nr-156-intel-evo-platform-2-in-1-laptop-computer-silver
-Microsoft,Surface Laptop Studio ,i5-11300H ,11005,16,LPDDR4x, 256," Intel Iris Xe Graphics
+",,x,https://www.microcenter.com/product/649169/hp-pavilion-x360-convertible-14-dy2035nr-140-2-in-1-laptop-computer-silver
+,Vivobook S 16 Flip TP3604VA-EB94T ,i9-13900H,29945,16,DDR4, 1000," Intel HD Graphics
+",16,Black,999.99,,,https://www.microcenter.com/product/670040/asus-vivobook-s-16-flip-tp3604va-eb94t-16-2-in-1-laptop-computer-midnight-black
+,ENVY x360 Convertible 15-es2168nr ,i7-1260P,17266,16,DDR4-3200, 512," Intel Iris Xe Graphics
+",15.6,Silver,"702.96
+",,x,https://www.microcenter.com/product/651098/hp-envy-x360-convertible-15-es2168nr-156-intel-evo-platform-2-in-1-laptop-computer-silver?ob=1
+,Spectre x360 16-f1008ca ,i7-1260P,17266,16,, 2000,,16,Black,1099.99,x,,https://www.microcenter.com/product/663614/hp-spectre-x360-16-f1008ca-16-intel-evo-platform-2-in-1-laptop-computer-(refurbished)-black
+,Surface Pro 9 ,i5-1235U,13645,8,LPDDR5, 256," Intel Iris Xe Graphics
+",13,Sapphire,1099.99,,,https://www.microcenter.com/product/659468/microsoft-surface-pro-9-13-2-in-1-laptop-computer-sapphire
+,ENVY x 360 15-ew1068nr ,i7-1355U,15357,16,DDR4-3200, 1000," Intel Iris Xe Graphics
+",15.6,Silver,"824.96
+",,x,https://www.microcenter.com/product/664646/hp-envy-x-360-15-ew1068nr-156-2-in-1-laptop-computer-mineral-silver
+,Surface Pro 9 ,i5-1235U,13645,8,LPDDR5, 256," Intel Iris Xe Graphics
+",13,Graphite,1099.99,,,https://www.microcenter.com/product/659467/microsoft-surface-pro-9-13-intel-evo-platform-2-in-1-laptop-computer-graphite
+,Surface Pro 9 ,i5-1235U,13645,8,LPDDR5, 256," Intel Iris Xe Graphics
+",13,Platinum,1099.99,,,https://www.microcenter.com/product/659466/microsoft-surface-pro-9-13-intel-evo-platform-2-in-1-laptop-computer-platinum
+,Surface Laptop Studio ,i5-11300H ,11005,16,LPDDR4x, 256," Intel Iris Xe Graphics
 ",14.4,Platinum,1399.99,,,https://www.microcenter.com/product/643148/microsoft-surface-laptop-studio-144-2-in-1-laptop-computer-platinum
-Dell,XPS 13 9315 ,i7-1250U,12882,16,On-board, 1000," Intel Iris Xe Graphics
-",13,Blue,1599.99,,,https://www.microcenter.com/product/661170/dell-xps-13-9315-13-2-in-1-intel-evo-platform-laptop-computer-blue
-Microsoft,Surface Laptop Studio ,i5-11300H ,11005,16,LPDDR4x, 512," Intel Iris Xe Graphics
+,gram 14T90R-K.AAB8U1 ,i7-1360P,19559,16,LPDDR5-6000, 1000," Intel Iris Xe Graphics
+",14,Black,"1189.96
+",,x,https://www.microcenter.com/product/664535/lg-gram-14t90r-kaab8u1-14-intel-evo-platform-2-in-1-laptop-computer-black
+,XPS 13 9315 ,i5-1230U,10861,16,Onboard, 512," Intel Iris Xe Graphics
+",13.4,Blue,"979.96
+",,x,https://www.microcenter.com/product/661171/dell-xps-13-9315-134-intel-evo-platform-2-in-1-laptop-computer-blue
+,Surface Laptop Studio ,i5-11300H ,11005,16,LPDDR4x, 512," Intel Iris Xe Graphics
 ",14.4,Platinum,1599.99,,,https://www.microcenter.com/product/643128/microsoft-surface-laptop-studio-144-2-in-1-laptop-computer-platinum
-Microsoft,Surface Pro 9 ,i7-1255U,13935,16,LPDDR5, 512," Intel Iris Xe Graphics
-",13,Graphite,1599.99,,,https://www.microcenter.com/product/659479/microsoft-surface-pro-9-13-intel-evo-platform-2-in-1-laptop-computer-graphite
-Microsoft,Surface Pro 9 ,i7-1255U,13935,16,LPDDR5, 512," Intel Iris Xe Graphics
-",13,Platinum,1599.99,,,https://www.microcenter.com/product/659478/microsoft-surface-pro-9-13-intel-evo-platform-2-in-1-laptop-computer-platinum
-Microsoft,Surface Laptop Studio ,i7-11370H,11818,16,LPDDR4x, 512," NVIDIA GeForce RTX 3050 Ti 4GB GDDR6
-",14.4,Platinum,1899.99,,,https://www.microcenter.com/product/643137/microsoft-surface-laptop-studio-144-2-in-1-laptop-computer-platinum
-Microsoft,Surface Laptop Studio ,i7-11370H,11818,32,LPDDR4x, 1000," NVIDIA GeForce RTX 3050 Ti 4GB GDDR6
-",14.4,Platinum,2299.99,,,https://www.microcenter.com/product/643138/microsoft-surface-laptop-studio-144-2-in-1-laptop-computer-platinum
-Microsoft,Surface Pro 9 ,i7-1255U,13935,32,LPDDR5, 1000," Intel Iris Xe Graphics
-",13,Platinum,2299.99,,,https://www.microcenter.com/product/659481/microsoft-surface-pro-9-13-2-in-1-intel-evo-platform-laptop-computer-platinum
+,Surface Pro 9 ,i7-1255U,13833,16,LPDDR5, 256," Intel Iris Xe Graphics
+",13,Platinum,1599.99,,,https://www.microcenter.com/product/659475/microsoft-surface-pro-9-13-2-in-1-intel-evo-platform-laptop-computer-platinum
+,XPS 13 9315 ,i7-1250U,12436,16,On-board, 1000," Intel Iris Xe Graphics
+",13,Blue,1699.99,,,https://www.microcenter.com/product/661170/dell-xps-13-9315-13-2-in-1-intel-evo-platform-laptop-computer-blue
+,Surface Pro 9 ,i7-1255U,13833,16,LPDDR5, 512," Intel Iris Xe Graphics
+",13,Platinum,1899.99,,,https://www.microcenter.com/product/659478/microsoft-surface-pro-9-13-intel-evo-platform-2-in-1-laptop-computer-platinum
+,Surface Pro 9 ,i7-1255U,13833,16,LPDDR5, 512," Intel Iris Xe Graphics
+",13,Graphite,1899.99,,,https://www.microcenter.com/product/659479/microsoft-surface-pro-9-13-intel-evo-platform-2-in-1-laptop-computer-graphite
+,Surface Laptop Studio ,i7-11370H,11783,32,LPDDR4x, 1000," NVIDIA GeForce RTX 3050 Ti 4GB GDDR6
+",14.4,Platinum,"1954.96
+",,x,https://www.microcenter.com/product/643138/microsoft-surface-laptop-studio-144-2-in-1-laptop-computer-platinum?ob=1
+,Latitude 9440 ,i7-1365U,15675,32,LPDDR5-6000 Onboard, 512," Intel Iris Xe Graphics
+",2,Gray,2499.99,,,https://www.microcenter.com/product/669173/dell-latitude-9440-2-in-1-laptop-computer-gray
+,Surface Pro 9 ,i7-1255U,13833,32,LPDDR5, 1000," Intel Iris Xe Graphics
+",13,Platinum,2599.99,,,https://www.microcenter.com/product/659481/microsoft-surface-pro-9-13-2-in-1-intel-evo-platform-laptop-computer-platinum
+,Surface Laptop Studio ,i7-11370H,11783,32,LPDDR4x, 2000 , NVIDIA GeForce RTX 3050 Ti 4GB GDDR6,14.4,Platinum,2799.99,,,https://www.microcenter.com/product/668589/microsoft-surface-laptop-studio-144-2-in-1-laptop-computer-platinum
