@@ -12,7 +12,7 @@ from datetime import date
 
 #get packages
 print("Installing packages")  #TODO make setup an if statement
-#setup.install()
+setup.install()
 
 #get html from website
 print("Scraping URLs")  #TODO add if statement to check if we got a request, else print error
