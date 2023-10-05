@@ -36,14 +36,11 @@ writer.writerow(['Brand', 'Model', 'CPU', 'CPU Score', 'RAM (GB)', 'RAM Type', '
 products = MicroSoup.findAll('div', attrs={"class":"result_right"}) #extracting data from each product
 for product in products: 
     brand = model = cpu = score = ramCapacity = ramType = storage = gpu = price = refurbishedStatus = openBoxStatus = color = size = link = None #gpu is usually None but did the rest for safety
-    
-    #product = product.find('div', attrs={"class" : "pDescription compressedNormal4"}) #checking new location
-    
+        
     link = 'https://www.microcenter.com' + product.findAll("a")[1].get("href")
     brand = product.findAll("a")[1].get("data-brand") 
     model = product.findAll("a")[1].get("data-name") #example: ENVY x360 15-ey0013dx 15.6&quot; 2-in-1 Laptop Computer (Refurbished) - Black 
 
-    #print(link)
     index = model.rfind(' ')
     color = model[index+1:]
     
@@ -51,7 +48,7 @@ for product in products:
         refurbishedStatus = "x"
 
     index = model.find(";")
-    if(index == -1): #weird edge case 
+    if(index == -1): #weird edge case for some laptop names
         index = model.find("-in-1")
     model = model[:index]
 
@@ -78,14 +75,13 @@ for product in products:
             else:
                 index = cpu.rindex("i")
                 cpu = cpu[index:]
-                cpu = re.sub(" ..th Gen ","-",cpu) #Intel Core i7 13th Gen 13700H Processor
-                #print(cpu)
-            index = cpu.rfind(" ")
+                cpu = re.sub(" ..th Gen ","-",cpu) 
+            index = cpu.rfind(" ") 
             cpu=cpu[:index]
-            index = cpu.rfind(" ")
-            if(index != -1 ):
-                cpu=cpu[:index]
-            #score = PassSoup.find("a", string=re.compile(cpu)).parent.parent.findAll("td")[1].text.replace(",","")
+            index = cpu.rfind(" ") 
+            if(index != -1 ): #weird case with ms surface not having processor Ghz in name
+                cpu=cpu[:index] 
+            score = PassSoup.find("a", string=re.compile(cpu)).parent.parent.findAll("td")[1].text.replace(",","")
         elif(spec.find("RAM") != -1):
             ram = spec[1:-4] 
             index = ram.find("GB")
